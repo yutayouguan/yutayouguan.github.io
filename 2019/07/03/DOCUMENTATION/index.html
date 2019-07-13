@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>impress.js参考API - 亦可</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="大学，编程，计算机科学与技术，iOS，JAVA，Python，Mac，黑苹果，C/C++,JAVAEE，数据库，SQL，MySQL，SQL Server,"> 
+    <meta name="description" content="这是我对学习生活中一些笔记，问题解决办法，和编程语言的学习技巧、经验的个人分享平台。,[TOC]
+此文档由亦可翻译,如果您想了解更多 内容，wiki上还有一系列教程和其他学习资源。
+impress.js使用了以下JS和CSS功能：
+
+DataSet API
+ClassList API,"> 
+    <meta name="author" content="王猛"> 
+    <link rel="alternative" href="atom.xml" title="亦可" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">亦可</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yutayouguan.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">impress.js参考API</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">impress.js参考API</h1>
+        <div class="stuff">
+            <span>七月 03, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>[TOC]</p>
+<p>此文档由亦可翻译,如果您想了解更多 内容，wiki上还有<a href="https://github.com/impress/impress.js/wiki/impress.js-tutorials-and-other-learning-resources" target="_blank" rel="noopener">一系列教程和其他学习资源</a>。</p>
+<p>impress.js使用了以下JS和CSS功能：</p>
+<ul>
+<li><a href="http://caniuse.com/#search=dataset" target="_blank" rel="noopener">DataSet API</a></li>
+<li><a href="http://caniuse.com/#search=classlist" target="_blank" rel="noopener">ClassList API</a></li>
+<li>[CSS 3D变换](<a href="http://caniuse.com/#search=css" target="_blank" rel="noopener">http://caniuse.com/#search=css</a> 3d)</li>
+<li>[CSS过渡](<a href="http://caniuse.com/#search=css" target="_blank" rel="noopener">http://caniuse.com/#search=css</a> transition)</li>
+</ul>
+<h1 id="参考API"><a href="#参考API" class="headerlink" title="参考API"></a>参考API</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="Root-Element-根元素"><a href="#Root-Element-根元素" class="headerlink" title="Root Element 根元素"></a>Root Element 根元素</h3><p>impress.js需要一个根元素。演示文稿的所有内容都将在该元素内创建。建议不要在初始化后操作由根元素内的impress.js创建的任何样式，属性或类。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"impress"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Step-Element-步元素"><a href="#Step-Element-步元素" class="headerlink" title="Step Element 步元素"></a>Step Element 步元素</h3><p>步骤元素是包含元数据的元素，元数据定义了如何在屏幕中显示。步骤元素应包含.step类和可选id属性。内容表示将位于摄像机中心的html片段。在“步骤元素”中，您可以定义一组特定的默认属性和定位，如下所述。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bored"</span> <span class="attr">class</span>=<span class="string">"step"</span> <span class="attr">data-x</span>=<span class="string">"-1000"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q</span>&gt;</span>Aren’t you just <span class="tag">&lt;<span class="name">b</span>&gt;</span>bored<span class="tag">&lt;/<span class="name">b</span>&gt;</span> with all those slides-based presentations?<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2D坐标定位（data-x，data-y）"><a href="#2D坐标定位（data-x，data-y）" class="headerlink" title="2D坐标定位（data-x，data-y）"></a>2D坐标定位（data-x，data-y）</h4><p>限定像素基于位置，其中中心的的步骤元件 <a href="#step-element">Step Element</a>将定位在无限画布内。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bored"</span> <span class="attr">class</span>=<span class="string">"step"</span> <span class="attr">data-x</span>=<span class="string">"-1000"</span> <span class="attr">data-y</span>=<span class="string">"-1500"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">q</span>&gt;</span>Aren’t you just <span class="tag">&lt;<span class="name">b</span>&gt;</span>bored<span class="tag">&lt;/<span class="name">b</span>&gt;</span> with all those slides-based presentations?<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2D缩放（数据缩放）"><a href="#2D缩放（数据缩放）" class="headerlink" title="2D缩放（数据缩放）"></a>2D缩放（数据缩放）</h4><p>定义步骤元素相对于其他步骤元素<a href="#step-element">Step Element</a> 的缩放倍数。例如，data-scale=”4”表示该元素看起来比其他元素大4倍。从表示和转换的角度来看，这意味着必须按比例缩小（4次）才能使其恢复到正确的大小。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"title"</span> <span class="attr">class</span>=<span class="string">"step"</span> <span class="attr">data-x</span>=<span class="string">"0"</span> <span class="attr">data-y</span>=<span class="string">"0"</span> <span class="attr">data-scale</span>=<span class="string">"4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"try"</span>&gt;</span>then you should try<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>impress.js<span class="tag">&lt;<span class="name">sup</span>&gt;</span>*<span class="tag">&lt;/<span class="name">sup</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"footnote"</span>&gt;</span><span class="tag">&lt;<span class="name">sup</span>&gt;</span>*<span class="tag">&lt;/<span class="name">sup</span>&gt;</span> no rhyme intended<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2D旋转（数据旋转）"><a href="#2D旋转（数据旋转）" class="headerlink" title="2D旋转（数据旋转）"></a>2D旋转（数据旋转）</h4><p>表示元素相对于360度的顺时针旋转量。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"its"</span> <span class="attr">class</span>=<span class="string">"step"</span> <span class="attr">data-x</span>=<span class="string">"850"</span> <span class="attr">data-y</span>=<span class="string">"3000"</span> <span class="attr">data-rotate</span>=<span class="string">"90"</span> <span class="attr">data-scale</span>=<span class="string">"5"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      It’s a <span class="tag">&lt;<span class="name">strong</span>&gt;</span>presentation tool<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      inspired by the idea behind <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://prezi.com"</span>&gt;</span>prezi.com<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      and based on the <span class="tag">&lt;<span class="name">strong</span>&gt;</span>power of CSS3 transforms and transitions<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> in modern browsers.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3D坐标定位（data-z）"><a href="#3D坐标定位（data-z）" class="headerlink" title="3D坐标定位（data-z）"></a>3D坐标定位（data-z）</h4><p>限定像素基于位置，其中中心的的步骤元件<a href="#step-element">Step Element</a>将被定位在第三维（Z）轴的无限画布内。例如，如果我们使用data-z=”-3000”，则意味着<a href="#step-element">Step Element</a>将远离相机定位（通过3000px）。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tiny"</span> <span class="attr">class</span>=<span class="string">"step"</span> <span class="attr">data-x</span>=<span class="string">"2825"</span> <span class="attr">data-y</span>=<span class="string">"2325"</span> <span class="attr">data-z</span>=<span class="string">"-3000"</span> <span class="attr">data-rotate</span>=<span class="string">"300"</span> <span class="attr">data-scale</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>and <span class="tag">&lt;<span class="name">b</span>&gt;</span>tiny<span class="tag">&lt;/<span class="name">b</span>&gt;</span> ideas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：rel插件的引入包括一个轻微的向后不兼容的更改。此前为默认值data-x，data-y并且data-z是零。该rel插件更改默认继承上一张幻灯片的价值。这意味着，如果它们非零，则需要将这些值显式设置为零。</p>
+<h4 id="3D旋转（data-rotate-x，data-rotate-y，data-rotate-z）"><a href="#3D旋转（data-rotate-x，data-rotate-y，data-rotate-z）" class="headerlink" title="3D旋转（data-rotate-x，data-rotate-y，data-rotate-z）"></a>3D旋转（data-rotate-x，data-rotate-y，data-rotate-z）</h4><p>您不仅可以在3D中定位<a href="#step-element">Step Element</a>，还可以围绕任何轴旋转它。</p>
+<p>例：</p>
+<p>以下示例将绕X轴旋转-40度（逆时针40度），绕Y轴旋转10度（顺时针）。</p>
+<p>您当然可以围绕Z轴旋转它data-rotate-z- 它具有与data-rotate（这两个基本上是别名）完全相同的效果</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"its-in-3d"</span> <span class="attr">class</span>=<span class="string">"step"</span> <span class="attr">data-x</span>=<span class="string">"6200"</span> <span class="attr">data-y</span>=<span class="string">"4300"</span> <span class="attr">data-z</span>=<span class="string">"-100"</span> <span class="attr">data-rotate-x</span>=<span class="string">"-40"</span> <span class="attr">data-rotate-y</span>=<span class="string">"10"</span> <span class="attr">data-scale</span>=<span class="string">"2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"have"</span>&gt;</span>have<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"you"</span>&gt;</span>you<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"noticed"</span>&gt;</span>noticed<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"its"</span>&gt;</span>it’s<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"in"</span>&gt;</span>in<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">b</span>&gt;</span>3D<span class="tag">&lt;<span class="name">sup</span>&gt;</span>*<span class="tag">&lt;/<span class="name">sup</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span>?</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"footnote"</span>&gt;</span>* beat that, prezi ;)<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3D旋转顺序（数据-旋转顺序）"><a href="#3D旋转顺序（数据-旋转顺序）" class="headerlink" title="3D旋转顺序（数据 - 旋转顺序）"></a>3D旋转顺序（数据 - 旋转顺序）</h4><p>rotateX(), rotateY(), rotateZ()应用CSS 变换的顺序很重要。这是因为每次旋转都相对于元素的当前位置。</p>
+<p>默认情况下，旋转顺序为data-rotate-order=”xyz”。对于某些高级用途，您可能需要更改它。演示演示3D旋转<a href="examples/3D-rotations/index.html">3D rotations</a> 设置此属性以将某些步骤旋转到使用默认顺序无法到达的位置。</p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><h4 id="4D状态（-past，-present和-future类）"><a href="#4D状态（-past，-present和-future类）" class="headerlink" title="4D状态（.past，.present和.future类）"></a>4D状态（.past，.present和.future类）</h4><p>将.future类添加到所有步骤的元素还没有被访问过呢。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.future</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所述.present类被添加到步骤元素<a href="#step-element">Step Element</a> 是当前在照相机的中心。一旦相机导航到步骤内，这对于在步骤内创建动画很有用。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.present</span> <span class="selector-class">.rotating</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-10deg);</span><br><span class="line">  <span class="attribute">transition-delay</span>: <span class="number">0.25s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将.past类添加到所有步骤的元素<a href="#step-element">Step Element</a> 已经访问过至少一次。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.past</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当前活动步骤（.active类）<br>所述.active类被添加到步骤元素<a href="#step-element">Step Element</a> 是当前在照相机的中心可见。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.step</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">  <span class="attribute">transition</span>: opacity <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.step</span><span class="selector-class">.active</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同时，将impress-on-*类添加到body元素中，类名表示活动的<a href="#step-element">Step Element</a>  id。这允许自定义全局样式，因为您无法将CSS类从活动步骤元素<a href="#step-element">Step Element</a> 向后匹配到body。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.impress-on-overview</span> <span class="selector-class">.step</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.impress-on-step-1</span>,</span><br><span class="line"><span class="selector-class">.impress-on-step-2</span>,</span><br><span class="line"><span class="selector-class">.impress-on-step-3</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: LightBlue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="渐进增强（-impress-not-supported-class）"><a href="#渐进增强（-impress-not-supported-class）" class="headerlink" title="渐进增强（.impress-not-supported class）"></a>渐进增强（.impress-not-supported class）</h4><p>将.impress-not-supported类添加到body元素如果浏览器不支持impress.js工作所需的功能，它是有用的CSS应用一些备用的风格。</p>
+<p>没有必要在body元素上手动添加它。如果脚本检测到浏览器缺少重要功能，则会添加此类。</p>
+<p>建议手动将类添加到body元素中，因为这意味着没有JavaScript的用户也将获得后备样式。当impress.js脚本检测到浏览器支持所有必需的功能时，.impress-not-support该类将从body元素中删除。<br><strong>Example:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.impress-not-supported</span> <span class="selector-class">.step</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p>许多新功能都是作为插件实现的。该插件的文档是了解这些，还有的README.md的起始位置的每个插件。</p>
+<h4 id="JavaScript的impress-id"><a href="#JavaScript的impress-id" class="headerlink" title="JavaScript的impress( [ id ] )"></a>JavaScript的impress( [ id ] )</h4><p>用于创建<a href="#impressapi">ImpressAPI</a>.的工厂函数。</p>
+<p>接受<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener"><code>String</code></a>表示页面中根元素的id的a 。如果省略，impress.js将默认查找id为“impress”的元素。<br><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> impressAPI = impress( <span class="string">"root"</span> );</span><br></pre></td></tr></table></figure>
+
+<h4 id="ImpressAPI"><a href="#ImpressAPI" class="headerlink" title="ImpressAPI"></a>ImpressAPI</h4><p>主要的impress.js API，用于处理impress.js的常见操作，如下所示。</p>
+<p>。在里面（）<br>在页面中全局初始化impress.js。每个文档只支持一个impress.js实例。</p>
+<h4 id="init"><a href="#init" class="headerlink" title=".init()"></a>.init()</h4><p>I在页面中全局初始化impress.js。每个文档只支持一个impress.js实例。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impress().init();</span><br></pre></td></tr></table></figure>
+
+<p>初始化演示文稿后impress:init，在根元素中触发事件。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rootElement = <span class="built_in">document</span>.getElementById( <span class="string">"impress"</span> );</span><br><span class="line">rootElement.addEventListener( <span class="string">"impress:init"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">"Impress init"</span> );</span><br><span class="line">&#125;);</span><br><span class="line">impress().init();</span><br></pre></td></tr></table></figure>
+
+<h4 id="tear"><a href="#tear" class="headerlink" title=".tear()"></a>.tear()</h4><p>将DOM重置为其原始状态，就像之前init()调用的那样。</p>
+<p>这可以用来“卸载”impress.js。对此的一个特殊用例是，如果要对演示文稿进行动态更改，可以进行拆卸，应用更改，然后init() 再次调用。（在大多数情况下，除了预期的动态变化之外，这不会对用户造成闪烁或其他可见效果。）</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impress().tear();</span><br></pre></td></tr></table></figure>
+
+<h4 id="next"><a href="#next" class="headerlink" title=".next()"></a>.next()</h4><p>使用该<a href="#impressgotostepindexstepelementidstepelement-duration"><code>goto()</code> function</a>.导航到演示文稿的下一步。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> api = impress();</span><br><span class="line">api.init();</span><br><span class="line">api.next();</span><br></pre></td></tr></table></figure>
+
+<h4 id="impress-prev"><a href="#impress-prev" class="headerlink" title="impress().prev()"></a>impress().prev()</h4><p>使用该<a href="#impressgotostepindexstepelementidstepelement-duration"><code>goto()</code> function</a>导航到演示文稿的上一步。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> api = impress();</span><br><span class="line">api.init();</span><br><span class="line">api.prev();</span><br></pre></td></tr></table></figure>
+
+<h4 id="impress-goto-stepIndex-stepElementId-stepElement-duration"><a href="#impress-goto-stepIndex-stepElementId-stepElement-duration" class="headerlink" title="impress().goto( stepIndex | stepElementId | stepElement, [ duration ] )"></a>impress().goto( stepIndex | stepElementId | stepElement, [ duration ] )</h4><p>接受<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener"><code>Number</code></a> 表示步骤索引的a。</p>
+<p>导航到给定步骤索引的步骤。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> api = impress();</span><br><span class="line">api.init();</span><br><span class="line">api.goto(<span class="number">7</span>);</span><br></pre></td></tr></table></figure>
+
+<p>接受 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener"><code>String</code></a>表示步骤元素<a href="#step-element">Step Element</a> ID的a。</p>
+<p>导航到给定提供的步骤元素 <a href="#step-element">Step Element</a>ID的步骤。<br><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> api = impress();</span><br><span class="line">api.init();</span><br><span class="line">api.goto( <span class="string">"overview"</span> );</span><br></pre></td></tr></table></figure>
+
+<p>接受<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" target="_blank" rel="noopener"><code>HTMLElement</code></a> 代表步骤元素<a href="#step-element">Step Element</a>的代码。</p>
+<p>导航到给定步骤元素的步骤<a href="#step-element">Step Element</a>。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> overview = <span class="built_in">document</span>.getElementById( <span class="string">"overview"</span> );</span><br><span class="line"><span class="keyword">var</span> api = impress();</span><br><span class="line">api.init();</span><br><span class="line">api.goto( overview );</span><br></pre></td></tr></table></figure>
+
+<p>在最后一个参数中接受一个可选的<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank" rel="noopener">Number</a>，表示转换的持续时间（以毫秒为单位）。如果未提供，将使用演示文稿的默认转换持续时间。</p>
+<p>当演示文稿导航到目标步骤元素<a href="#step-element">Step Element</a>.时impress:stepenter，在根元素<a href="#root-element">Root Element</a>中触发事件。</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rootElement = <span class="built_in">document</span>.getElementById( <span class="string">"impress"</span> );</span><br><span class="line">rootElement.addEventListener( <span class="string">"impress:stepenter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> currentStep = event.target;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">"Entered the Step Element '"</span> + currentStep.id + <span class="string">"'"</span> );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>当演示文稿导航离开当前步骤元素 <a href="#step-element">Step Element</a>时impress:stepleave，在根元素 <a href="#root-element">Root Element</a> 中触发事件</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rootElement = <span class="built_in">document</span>.getElementById( <span class="string">"impress"</span> );</span><br><span class="line">rootElement.addEventListener( <span class="string">"impress:stepleave"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> currentStep = event.target;</span><br><span class="line">  <span class="keyword">var</span> nextStep = event.detail.next;</span><br><span class="line">  <span class="built_in">console</span>.log( <span class="string">"Left the Step Element '"</span> + currentStep.id + <span class="string">"' and about to enter '"</span> + nextStep.id );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="改进文档"><a href="#改进文档" class="headerlink" title="改进文档"></a>改进文档</h3><p>你找到了可以改进的东西吗？然后创建 <a href="https://github.com/impress/impress.js/issues/new" target="_blank" rel="noopener">create an issue</a>一个问题，以便我们讨论它！</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a277b937be540aba926b'
+        data-cs='9eb54bfed5d880c0db144ffd2bf963233ad8e294'
+        data-r='gitalk'
+        data-o='yutayouguan'
+        data-a='yutayouguan'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#参考API"><span class="toc-number">1.</span> <span class="toc-text">参考API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-number">1.1.</span> <span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Root-Element-根元素"><span class="toc-number">1.1.1.</span> <span class="toc-text">Root Element 根元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-Element-步元素"><span class="toc-number">1.1.2.</span> <span class="toc-text">Step Element 步元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2D坐标定位（data-x，data-y）"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">2D坐标定位（data-x，data-y）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2D缩放（数据缩放）"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2D缩放（数据缩放）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2D旋转（数据旋转）"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">2D旋转（数据旋转）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3D坐标定位（data-z）"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">3D坐标定位（data-z）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3D旋转（data-rotate-x，data-rotate-y，data-rotate-z）"><span class="toc-number">1.1.2.5.</span> <span class="toc-text">3D旋转（data-rotate-x，data-rotate-y，data-rotate-z）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3D旋转顺序（数据-旋转顺序）"><span class="toc-number">1.1.2.6.</span> <span class="toc-text">3D旋转顺序（数据 - 旋转顺序）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS"><span class="toc-number">1.1.3.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4D状态（-past，-present和-future类）"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">4D状态（.past，.present和.future类）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#渐进增强（-impress-not-supported-class）"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">渐进增强（.impress-not-supported class）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插件"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript的impress-id"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">JavaScript的impress( [ id ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ImpressAPI"><span class="toc-number">1.1.3.5.</span> <span class="toc-text">ImpressAPI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#init"><span class="toc-number">1.1.3.6.</span> <span class="toc-text">.init()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tear"><span class="toc-number">1.1.3.7.</span> <span class="toc-text">.tear()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#next"><span class="toc-number">1.1.3.8.</span> <span class="toc-text">.next()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#impress-prev"><span class="toc-number">1.1.3.9.</span> <span class="toc-text">impress().prev()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#impress-goto-stepIndex-stepElementId-stepElement-duration"><span class="toc-number">1.1.3.10.</span> <span class="toc-text">impress().goto( stepIndex | stepElementId | stepElement, [ duration ] )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改进文档"><span class="toc-number">1.1.4.</span> <span class="toc-text">改进文档</span></a></li></ol></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

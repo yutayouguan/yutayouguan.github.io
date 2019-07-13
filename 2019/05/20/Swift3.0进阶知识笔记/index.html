@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Swift3.0进阶知识笔记 - 亦可</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="大学，编程，计算机科学与技术，iOS，JAVA，Python，Mac，黑苹果，C/C++,JAVAEE，数据库，SQL，MySQL，SQL Server,"> 
+    <meta name="description" content="这是我对学习生活中一些笔记，问题解决办法，和编程语言的学习技巧、经验的个人分享平台。,#Swift3.0进阶知识
+函数
+
+可以为函数参数设定默认值，炮塔的位置固定，可将其设为默认值，只传入一个参数即可
+
+游戏中敌人距离炮塔的距离，已确定是否攻击
+&amp;apos;var str = &amp;qu,"> 
+    <meta name="author" content="王猛"> 
+    <link rel="alternative" href="atom.xml" title="亦可" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">亦可</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yutayouguan.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Swift3.0进阶知识笔记</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Swift3.0进阶知识笔记</h1>
+        <div class="stuff">
+            <span>五月 20, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Swift/">Swift</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ios/">ios</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>#Swift3.0进阶知识</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><hr>
+<ul>
+<li><p>可以为函数参数设定默认值，炮塔的位置固定，可将其设为默认值，只传入一个参数即可</p>
+</li>
+<li><p>游戏中敌人距离炮塔的距离，已确定是否攻击</p>
+<pre><code>&apos;var str = &quot;Hello, playground&quot;
+  func getDistance(enemyPosition:CGPoint,turretPosition:CGPoint=CGPoint(x:100,y:100))-&gt;CGFloat
+  {
+let Xdis = turretPosition.x - enemyPosition.x
+let Ydis = turretPosition.y - enemyPosition.y
+return sqrt(pow(Xdis, 2)+pow(Ydis, 2))
+  }
+  let enemyPositiion = CGPoint(x:200,y:200)//敌人位置
+  let distance = getDistance(enemyPosition: enemyPositiion)
+  print(distance)
+
+  let eeemyPostiion = CGPoint(x: 200, y: 200)//敌人位置
+  let anotherturretPosition = CGPoint(x: 100, y: 400)//另一个炮塔位置
+  let distance_1 = getDistance(enemyPosition: eeemyPostiion, turretPosition: anotherturretPosition)
+  print(distance_1)&apos;</code></pre></li>
+<li><p>简单的一个算数运算函数</p>
+<pre><code>func sum(number1:Int,number2:Int)-&gt;Int
+  {
+return number1+number2
+  }
+  let result_a = sum(number1: 2, number2: 4)//函数调用传入参数2与4
+  let result_b = sum(number1: 1, number2: 4)//函数调用传入参数1与4</code></pre></li>
+<li><p>设置可变的函数参数数量</p>
+</li>
+<li><p>在定义函数时，不确定参数的数量，通过在变量类型后加（…），定义可变参数。</p>
+</li>
+<li><p>一个函数只能有一个可变参数，必须放在函数表的最后一个</p>
+<pre><code>func getAverage(numbers:Double...)-&gt;Double
+  {
+if numbers.count==0//防止除0 error
+{
+    return 0.0
+}
+else
+{
+    var  total:Double = 0
+    for number in numbers
+    {
+        total+=number
+    }
+    return total/Double(numbers.count)
+    }
+  }
+  let average2 = getAverage()
+
+  let average1 = getAverage(numbers: 1,2,3,4,5,6,7)//调用getAverage()方法，并传入参数（1，2，3，4，5，6，7）&apos;</code></pre></li>
+<li><p>函数作为参数和返回类型</p>
+<pre><code>func getSmaller(number_q:Int,number_w:Int)-&gt;Int//获取最小值方法
+  {
+return (number_q&lt;number_w) ? number_q:number_w
+  }
+  func getBigger(number_e:Int,number_r:Int)-&gt;Int//获取最大值方法
+  {
+return (number_e&gt;number_r) ? number_e:number_r
+  }
+  func printMathResult(mathFunction:(Int,Int)-&gt;Int,num1:Int,num2:Int)//第一个参数选择执行那个函数，参数类型为（Int,Int)-&gt;Int,拥有两个Int类型的参数，和返回整形结果的函数类型，来处理后面两个参数
+  {
+print(&quot;The result is:\(mathFunction(num1,num2))&quot;)
+  }
+  printMathResult(mathFunction: getSmaller, num1: 1, num2: 3) //选择getSmaller方法
+  printMathResult(mathFunction: getBigger, num1: 3, num2: 6)//选择getBigger方法</code></pre></li>
+<li><p>函数作为返回类型</p>
+<pre><code>func chooseFunction(needBigger:Bool)-&gt;(Int,Int)-&gt;Int
+  {
+return needBigger ? getBigger:getSmaller
+
+  }
+  let function = chooseFunction(needBigger: true)//将函数赋予常量function，使其具有获得较大参数的功能。
+  print(function(2,3))</code></pre></li>
+<li><p>元祖作为函数的返回值类型，实现多的返回值</p>
+<pre><code>func getUserInfo(userID:String)-&gt;(userName:String,userLevel:Int,photoPath:String)
+  {
+let userNmae = &quot;Jhon&quot;
+let userLevel = 3
+let photoPath = &quot;http://www.wmweb.com/userphoto/me.png&quot;
+return (userNmae,userLevel,photoPath)
+
+  }
+  let message_i = getUserInfo(userID: &quot;2341&quot;)
+  print(message_i)
+  print(message_i.0)
+  print(message_i.1)
+  print(message_i.2)</code></pre></li>
+<li><p>使用函数类型</p>
+<pre><code>func getTotal(num_a:Int,num_s:Int)-&gt;Int//一个普通函数
+  {
+return num_s + num_a
+    }
+  let newFunction:(Int,Int)-&gt;Int = getTotal//定义一个变量，其类型时两个整型参数，并返回整形的函数，并指向getTotal函数
+  let result = newFunction(1,1)
+  print(result)
+
+  let anotherFunction = getTotal//再给函数类型定义变量时，可省略函数类型的书写
+  let result1 = anotherFunction(1,1)
+  print(result1)
+
+  func printHelloSwift()//使用无参数且无返回值的函数类型
+  {
+print(&quot;Hello Swift!&quot;)
+  }
+  let anotherGreating:()-&gt;() = printHelloSwift
+  print(anotherFunction)</code></pre></li>
+<li><p>函数的输入输出参数</p>
+</li>
+<li><p>如果想要一个函数可以修改参数的值，并且这些修改在函数调用结束后任然存在，那就可以将参数定义为输入输出参数，这个一通过在参数类型的前面添加inout关键字实现</p>
+</li>
+<li><p>传入函数的参数只能是变量，当传入的参数作为输入输出参数时，需要在参数前面加上&amp;符号，表示这个参数值时可以被修改的</p>
+<pre><code>func swap(prevNumber:inout Double,nextNumber:inout Double)//prevNumber and nextNumber 都拥有inout关键字，都为输入输出参数。
+  {
+let tempNumber = prevNumber //定义临时常量tempNumber交换两个输入输出参数的值
+prevNumber = nextNumber
+nextNumber = tempNumber
+
+  }
+  var prevNumber = 1
+  var nextNumber = 3
+  swap(&amp;prevNumber, &amp;nextNumber)//调用swap（）时，系统会自动为连个输入输出参数左边加上&amp;
+  //函数调用结束
+  print(prevNumber)//修改依然存在
+  print(nextNumber)</code></pre></li>
+<li><p>函数的嵌套,在父函数下调用，外部无法调用</p>
+<pre><code>func chooseFunction(needBigger:Bool,number_d:Int,number_f:Int)
+  {</code></pre><p>   func getSmaller(number3: Int, number4: Int)</p>
+<pre><code>{
+    print((number3&lt;number4) ? number3:number4)
+}
+func getBigger(number3:Int,Number4:Int)
+{
+    print((number3&lt;Number4) ? number3:Number4)
+}
+needBigger ? getSmaller:getBigger
+  }
+  let newFunction1:(Bool,Int,Int)-&gt;() = chooseFunction//函数类型
+  print(newFunction1(true,4,6))</code></pre></li>
+<li><p>函数的递归：自调用函数；直接或间接的调用函数自身</p>
+<pre><code>func recursion(n:Int)-&gt;Int
+    {
+if n&lt;=1 { //执行8次
+    return 2
+}
+else
+{
+    return recursion(n: n-1) * recursion(n: n-2)//递归语句执行了7次，导致148行执行了8次，从而使8个2想乘，得到结果256
+}
+
+  }
+  print(recursion(n: 5))</code></pre></li>
+</ul>
+<ul>
+<li><p>常用的内置函</p>
+<pre><code>print(abs(-100))//绝对值函数
+  print(pow(2, 10))//指数函数
+  print(sqrt(pow(3, 2) + pow(4, 2)))//平方根函数求勾股定理
+  print(min(2, 3,8,0,15))//最小值函数
+  print(max(23,56,23, 52))//最大值函数</code></pre></li>
+<li><p>filter函数常用于查找在数组元素中，满足指定条件的元素//这里是查找1到10中能被3整除的数字（{$0%3==0}为筛选闭包，$0为默认参数，返回类型隐式推断为Bool类型）</p>
+<pre><code>for i in (1...10).filter({$0%3==0})
+  {
+print(i)
+    }
+    for i in [23,9,3,6,78,56].filter({$0%3==0})
+    {
+print(i)
+
+  }</code></pre></li>
+</ul>
+<ul>
+<li>map函数通常用于将数组中的每个元素通过指定的方法进行转换。//这里把1到5的数都乘以3遍历出来<pre><code>for i in (1...5).map({$0*3}) {
+print(i)
+  }</code></pre></li>
+</ul>
+<ul>
+<li>reduce函数可以把数组元素组合计算为一个值，<pre><code>let result_z = (1...10).reduce(0, {$0+$1})// {$0+$1}可缩写为+ ,第一个参数表示从多少开始，此处从0开始
+    print(result_z)
+  let result_x = (1...100).reduce(0, +)
+  print(result_x)
+  let result_c = (1...10).reduce(1, *)//此处从1开始，从零开始，结果就为零了
+  print(result_c)</code></pre></li>
+</ul>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><hr>
+<ul>
+<li><p>事先考虑某一变量的可能取值范围尽量用自然语言中含义清楚的单词来表示他的每一个值，这种方法叫做枚举方法，类型叫做枚举类型，定义用enum关键字，枚举成员在一对大括号中</p>
+</li>
+<li><p>通过case关键字明确定义的成员值，枚举名称用驼峰命名，枚举成员在被创建时，不会赋值一个默认的整数值,</p>
+</li>
+<li><p>枚举只限于在列举出来的范围内进行取值，有限的，支持字符串，字符，整数和浮点数</p>
+<pre><code>enum UserLevel
+  {
+case 总经理
+case 区域经理
+case 主管
+case 业务员
+  }</code></pre><p>//当枚举成员比较少时可将枚举成员放置在一行中<br>/*</p>
+<pre><code>enmu userLevel
+{
+case 总经理，区域经理，主管，业务员
+}</code></pre><p> */</p>
+<pre><code>print(UserLevel.总经理)
+var userLevel = UserLevel.业务员
+userLevel = .主管</code></pre></li>
+<li><p>当变量userLevel被声明为UserLevel枚举类型时，设定他的值时可以不必在写类型名，即用更快捷的点（.）就可以修改为另一个UserLevel的成员值</p>
+</li>
+<li><p>枚举的遍历：通常使用switch语句进行枚举类型的遍历操作</p>
+<pre><code>switch userLevel
+   {
+    case UserLevel.总经理:
+print(&quot;总经理登录系统后，进行系统配置页面。&quot;)
+    case UserLevel.区域经理:
+print(&quot;区域l经理录系统后，进行系统配置页面。&quot;)
+    case UserLevel.主管:
+print(&quot;主管登录系统后，进行系统配置页面。&quot;)
+    case UserLevel.业务员:
+print(&quot;业务员登录系统后，进行系统配置页面。&quot;)
+    }</code></pre></li>
+<li><p>一般用switch语句是对所有的枚举值全部覆盖的，否则，就需要使用default语句，以包含未被处理的枚举值。</p>
+<pre><code>switch userLevel {
+  case UserLevel.总经理:
+    print(&quot;总经理登录系统后，进行系统配置页面。&quot;)
+  case UserLevel.区域经理:
+    print(&quot;区域l经理录系统后，进行系统配置页面。&quot;)</code></pre><p>/*case UserLevel.主管:</p>
+<pre><code>    print(&quot;主管登录系统后，进行系统配置页面。&quot;)*/
+case UserLevel.业务员:
+    print(&quot;业务员登录系统后，进行系统配置页面。&quot;)
+default:  //Default will never be executed（默认永远不会执行）(当枚举值在的时候)
+    print(&quot;无法进入客户报备页面，请重新登录！&quot;)
+}</code></pre></li>
+<li><p>枚举的原始值</p>
+<pre><code>/*enum Gender:UInt8 //gender：性别
+    {
+case Male = 1
+case Female = 2
+case Unknow = 3
+  }</code></pre></li>
+<li><p>不必显示的为每个枚举值分配一个原始值，如下Male = 1,则后面每个成员的隐式值都比前一个大1，swift会自动分配，第一个成员没有值时，默认为零</p>
+<p>   enum Gender:UInt8<br>   {<br>   case Male = 1,Female,Unknow<br>   }<br>//可以用rawValue属性来访问一个枚举成员的原始值<br>  print(Gender.Female.rawValue) //rawvalue：原始值<br>//如果用原始值类型定义一个枚举，那么枚举就会自动收到一个可以接受原始值类型的值得初始化器，然后返回一个枚举成员或者nil<br>  let gender = Gender(rawValue: 2)<br>  print(gender!)<br>//给枚举添加方法:于其他语言不同的是，枚举可以添加方法扩展枚举的功能<br>  enum Gender1:UInt8<br>  {</p>
+<pre><code>case Male,Female,Unknow
+func description()
+{
+switch self {
+case .Female: //枚举案例“女性”不能用作实例成员
+    print(&quot;Hi，lady！&quot;)
+
+case .Male:
+    print(&quot;Hi,Man!&quot;)
+case .Unknow:
+    print(&quot;Hi,....&quot;)
+}
+}</code></pre><p>  }<br>  let gender1 = Gender1.Female//对枚举实例化<br>  gender1.description()</p>
+</li>
+</ul>
+<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><hr>
+<ul>
+<li>可以为结构体定义常量和变量，还可以为结构体添加方法来扩展结构体的功能。以关键字struct来进行定义，将内容放置在一对大括号中。<pre><code>struct Animal
+  {
+let zoomNmae:String = &quot;Beijing zoom&quot;
+var name:String
+  }</code></pre>//对结构体实例化<pre><code>var animal = Animal(name: &quot;Tiger&quot;)
+print(animal)
+print(animal.name)</code></pre>//修改结构体实例<pre><code>animal.name = &quot;Elephant&quot;
+print(animal)</code></pre>//注意：类是引用类型，而结构体和枚举都是值类型，值类型是一种当被指定为常量或者变量，或者着传递给函数时会被拷贝的类型。<pre><code>let firstAnimal = Animal(name: &quot;Monker&quot;)
+var secondAnimal = firstAnimal
+secondAnimal.name = &quot;Elephant&quot;
+print(firstAnimal.name)
+print(secondAnimal.name)</code></pre>//可见当secondAnimal的值修改了，而firstAnimal的未被修改<br>//给结构体添加方法<pre><code>struct Animal1
+{
+let zoomNmae:String = &quot;Beijing zoom&quot;
+var name:String
+func say()
+{
+    print(&quot;Hi ,I&apos;m \(name).&quot;)
+}
+}
+let tiger = Animal1(name: &quot;Tiger&quot;)
+tiger.say()</code></pre></li>
+</ul>
+<ul>
+<li><p>结构体的下标<br>//结构体，枚举，类都可以定义下标，可以作为访问集合、列表、或序列成员元素的快捷方式。<br>//可以使用下标通过索引值来设置或检索值，而不需要为设置和检索值来分别使用实例方法。<br>//实用关键字subscript(标)来定义下标</p>
+<pre><code>struct MySubscript
+{
+var number:Int
+subscript(n:Int)-&gt;Int //定义一个下标，传入一个整形参数，将结构体的属性乘以n倍h🐵返回结果
+{
+    return number*n
+}
+
+}
+let subScript = MySubscript(number: 4)//实例化结构体，并设置实例的number参数值为4
+    print(subScript[3])//使用下标的方法获得number属性值乘以3后的乘积</code></pre></li>
+</ul>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><hr>
+<ul>
+<li><p>用户自定义的数据类型，具有一定的行为能力，包含两部分内容：属性和方法 和结构体极为相似，都有属性和方法，但类是引用类型，而结构体是值类型<br>//与其他语言不同的是，swift并不要求你为自定义类去创建独立的接口和实现文件，你所要做的就是在一个单一文件中定义一个类，系统会自动生成面向其他代码的外部接口<br>//类用关键字class作为关键字，把内容放在一对大括号中,swift要求定义类时要对属性进行初始化</p>
+<pre><code>class Car
+{
+var brand:String = &quot;&quot;
+var spend:Int = 0</code></pre></li>
+</ul>
+<pre><code>}</code></pre>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a277b937be540aba926b'
+        data-cs='9eb54bfed5d880c0db144ffd2bf963233ad8e294'
+        data-r='gitalk'
+        data-o='yutayouguan'
+        data-a='yutayouguan'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数"><span class="toc-number">1.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#枚举"><span class="toc-number">2.</span> <span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构体"><span class="toc-number">3.</span> <span class="toc-text">结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类"><span class="toc-number">4.</span> <span class="toc-text">类</span></a></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

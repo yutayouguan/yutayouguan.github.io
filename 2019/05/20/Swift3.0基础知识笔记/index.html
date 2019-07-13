@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Swift3.0基础知识笔记 - 亦可</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="大学，编程，计算机科学与技术，iOS，JAVA，Python，Mac，黑苹果，C/C++,JAVAEE，数据库，SQL，MySQL，SQL Server,"> 
+    <meta name="description" content="这是我对学习生活中一些笔记，问题解决办法，和编程语言的学习技巧、经验的个人分享平台。,import UIKit
+字典的读取和编辑
+var message_me = [&amp;quot;11&amp;quot;:&amp;quot;亦可&amp;quot;,&amp;quot;12&amp;quot;:&amp;quot;小艾&amp;quot;,"> 
+    <meta name="author" content="王猛"> 
+    <link rel="alternative" href="atom.xml" title="亦可" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">亦可</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yutayouguan.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Swift3.0基础知识笔记</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Swift3.0基础知识笔记</h1>
+        <div class="stuff">
+            <span>五月 20, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Swift/">Swift</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ios/">ios</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>import UIKit</p>
+<h3 id="字典的读取和编辑"><a href="#字典的读取和编辑" class="headerlink" title="字典的读取和编辑"></a>字典的读取和编辑</h3><hr>
+<pre><code>var message_me = [&quot;11&quot;:&quot;亦可&quot;,&quot;12&quot;:&quot;小艾&quot;,&quot;13&quot;:&quot;李可&quot;]
+print(message_me)
+print(message_me[&quot;11&quot;]!)//使用下标语法通过键获得相应的值
+message_me[&quot;14&quot;] = &quot;亦可&quot;//使用下标语法添加新元素
+print(message_me)
+message_me[&quot;12&quot;] = &quot;李毅&quot;//使用下标语法修改对应元素值
+print(message_me)
+message_me.updateValue(&quot;舒儿&quot;, forKey: &quot;15&quot;)//使用updateValue()方法，修改指定键的值
+print(message_me)
+message_me[&quot;12&quot;] = nil //将某个键的值设为nil,删除对应的键值对
+print(message_me)
+message_me.removeValue(forKey: &quot;11&quot;)//使用removeValue(forKey: &quot;  &quot;)方法删除指定的键值对
+print(message_me)</code></pre><ul>
+<li><p>字典的遍历</p>
+<pre><code>for key_a in message_me.keys //遍历键
+    {</code></pre><p>  print(key_a)</p>
+<pre><code>}
+for value_b in message_me.values//遍历值
+{</code></pre><p>  print(value_b)</p>
+<pre><code>}</code></pre><p>  for (key,value) in message_me//遍历键值对</p>
+<pre><code>{</code></pre><p>  print(key+”:”+value)</p>
+<pre><code>}
+let num=2
+switch num {
+case 1:</code></pre><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><hr>
+<ul>
+<li>数组遍历<br>var numbers = [1,1,12,3,4,56,78,45]<pre><code>for index in 0..&lt;numbers.count
+ {</code></pre>print(numbers[index])<pre><code>}
+for number in numbers
+{
+print(number)
+}
+numbers+=[23,45,56]//数组拼接用+号
+numbers.append(100)//数组在末尾加一个数
+numbers.insert(200, at: 3)//在指定位置插入一个数
+numbers[1]=1000//改变数组的某个值</code></pre>  numbers.isEmpty//判断数组是否为空<pre><code>numbers.count//计算数组的长度</code></pre>  numbers.contains(200)//判断是否存在200<br>  numbers.sort()//数组排序，默认升序排列<pre><code>numbers.sort(by:&gt;)//降序排列</code></pre>  var userList = [(name:”Tom”,age:20),(name:”Alise”,age:19),(name:”Aike”,age:20)]<pre><code>userList.sort(by:{$0.name&gt;$1.name})//复杂元素进行排序</code></pre>  case 2:</li>
+</ul>
+</li>
+<li><p>复杂数组遍历</p>
+<pre><code>let scores = [&quot;jerry&quot;:78,&quot;Tom&quot;:89,&quot;Aili&quot;:94]
+for (name,score) in scores
+{
+print(name + &quot;score is \(score)&quot;)
+}</code></pre></li>
+<li><p>对维数组遍历</p>
+<pre><code>  let Scores = [[1,4,567,43],[35,67,89,34],[23,56,67,54]]
+  for subScore in Scores
+  {
+  for Score in subScore
+  {
+      print(Score)
+
+}
+  }</code></pre></li>
+</ul>
+<ul>
+<li><p>对指定范围数组遍历使用定义range的方法实现</p>
+<pre><code>let number_r = [1,2,3,4,5,6]
+  let range = 2..&lt;number_r.count
+ for (index_i,value) in zip(range, number_r[range])//zip()的作用是将两个序列的元素，一一对应合并生成一个新序列。
+ {
+ print(&quot;\(index_i):\(value)&quot;)
+ }</code></pre><p>  default:</p>
+<pre><code>print(&quot;输入错误！&quot;)</code></pre><p>  }<br>//continue语句,跳过此次循环<br>  let studentSex = [“man”,”woman”,”man”,”woman”,”man”,”woman”,”man”,”woman”]<br>  var boysAcount = 0<br>  for sex in studentSex<br>  {</p>
+<pre><code>if(sex==&quot;woman&quot;)//注意等号（==）与赋值号（=）
+{
+continue
+}</code></pre><p>  boysAcount+=1<br>  }<br>  print(boysAcount)</p>
+<p>  //fallthrough语句，继续下一个case分支，swift默认只执行选择的case分支<br>  let time = 6<br>  var message = “It’s now”<br>  switch time {<br>  case 2,3,4,5,6,7,9,10,16:</p>
+<pre><code>message+=&quot; \(time) o&apos;clock&quot;
+fallthrough</code></pre><p>  default:</p>
+<pre><code>message+=&quot; .&quot;</code></pre><p>  }</p>
+</li>
+<li><p>switch语句：把一个值与若干值匹配，执行匹配到的语句</p>
+<p>  let Time = 12<br>  switch Time {<br>  case 7:</p>
+<pre><code>print(&quot;It&apos;s Time get up!&quot;)</code></pre><p>  case 8,12,18:</p>
+<pre><code>print(&quot;It&apos;s Time for eating!&quot;)</code></pre><p>  case let x where x&gt;18 &amp;&amp; x&lt;=24:</p>
+<pre><code>print(&quot;It&apos;s Time for happy!&quot;)</code></pre><p>  case 1…6:<br>  print(“It’s Time for rest!”)<br>  default:</p>
+<pre><code>print(&quot;Keep busy!&quot;)</code></pre><p>  }</p>
+</li>
+<li><p>if条件判断语句：<br>  let IDcard = “530381199705202956”<br>  let count = IDcard.lengthOfBytes(using: String.Encoding.utf8)<br>  if count == 18<br>  {</p>
+<pre><code>print(&quot;准确的身份证号&quot;)</code></pre><p>  }<br>  else if count == 15<br>  {</p>
+<pre><code>print(&quot;准确的身份证号&quot;)</code></pre><p>  }<br>  else<br>  {</p>
+<pre><code>print(&quot;不准确的身份证号&quot;)</code></pre><p>  }</p>
+</li>
+<li><p>repeat-while语句：与传统的do-whilet语句一样：先执行语句块在，判断，至少执行一次<br>  var Index = 0<br>  repeat<br>  {</p>
+<pre><code>Index += 1
+print(&quot;你好，love！&quot;)</code></pre><p>  }while Index &lt; 5</p>
+</li>
+<li><p>while循环语句<br>  var index = 0<br>  while index &lt; 5 {</p>
+<pre><code>index += 1
+print(&quot;你好，like!&quot;)</code></pre><p>  }</p>
+</li>
+</ul>
+<h3 id="for循环："><a href="#for循环：" class="headerlink" title="for循环："></a>for循环：</h3><p>重复一条语句达到特定的条件</p>
+<hr>
+<pre><code>for _ in 0..&lt;3//（..&lt;)表示0~3，但不包含3,(_)表示一个占位符
+{
+    print(&quot;黑凤梨！&quot;)
+}
+
+for _ in 0...3//（...）表示0~3，包含3
+{
+print(&quot;Love you!&quot;)
+}</code></pre><ul>
+<li><p>字符串的比较</p>
+<pre><code>let passwordFromUser = &quot;w2956m&quot;
+  let passwordFromDb = &quot;w2956m&quot;
+  if passwordFromUser == passwordFromDb
+  {
+    print(&quot;你可以登录系统！&quot;)</code></pre><p>  }</p>
+</li>
+<li><p>字符串的大小写转换</p>
+<pre><code>let hello = &quot;Hello WangMeng!&quot;
+  print(hello.uppercased())//转换为大写
+  print(hello.lowercased())//转换为小写
+  print(hello.capitalized)//转换为首字母大写</code></pre></li>
+<li><p>字符串的截取和替换</p>
+<pre><code>var hello_s = &quot;遇见未知的自己！&quot;
+  hello_s.replacingOccurrences(of: &quot;遇见&quot;, with: &quot;找寻&quot;)
+  hello_s.remove(at: hello_s.index(hello_s.startIndex, offsetBy: 3))</code></pre></li>
+</ul>
+<ul>
+<li><p>浮点数据的实用函数</p>
+<pre><code>let number_f = -9.8
+  number_f.advanced(by: 20) //加上20
+  number_f.distance(to: 23.3)//获得两个数据的差值
+  number_f.isFinite//判断数据是否有限
+  number_f.isInfinite//判断数据是否无限
+  number_f.isZero//判断数据是否为零
+  number_f.isLess(than: -9.0)//判断数据是否小于-9.0
+  number_f.isNaN//判断数据是否为空
+  number_f.isEqual(to: -9.80)//判断数据是否等于-9.80
+  number_f.isNormal //判断数据是否正常</code></pre></li>
+<li><p>三元条件运算符question ？answer1 ：answer2</p>
+<pre><code>let score = 66
+  let result=(score&gt;60) ? &quot;通过考试&quot;:&quot;未通过考试&quot; //注意（？）号前后都有一个空格</code></pre></li>
+<li><p>元组值得访问</p>
+<pre><code>let http404Error = (statusCOde:404,description:&quot;not found!&quot;)
+  print(&quot;访问此页面时出现\(http404Error.statusCOde),页面\(http404Error.description)&quot;)</code></pre></li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a277b937be540aba926b'
+        data-cs='9eb54bfed5d880c0db144ffd2bf963233ad8e294'
+        data-r='gitalk'
+        data-o='yutayouguan'
+        data-a='yutayouguan'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#字典的读取和编辑"><span class="toc-number">1.</span> <span class="toc-text">字典的读取和编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">2.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for循环："><span class="toc-number">3.</span> <span class="toc-text">for循环：</span></a></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

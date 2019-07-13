@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>基于JAVAEE开发的简单的教务网站 - 亦可</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="大学，编程，计算机科学与技术，iOS，JAVA，Python，Mac，黑苹果，C/C++,JAVAEE，数据库，SQL，MySQL，SQL Server,"> 
+    <meta name="description" content="这是我对学习生活中一些笔记，问题解决办法，和编程语言的学习技巧、经验的个人分享平台。,简介
+这是个简单的教务系统网站，对系，专业，班级，课程信息，课程安排，学生管理进行维护。
+需求分析
+系统概述：
+
+简单的教务系统！
+前台主要是登录、查询信息等模块，后台主要完成功能有系，专业，班级，,"> 
+    <meta name="author" content="王猛"> 
+    <link rel="alternative" href="atom.xml" title="亦可" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">亦可</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yutayouguan.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">基于JAVAEE开发的简单的教务网站</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">基于JAVAEE开发的简单的教务网站</h1>
+        <div class="stuff">
+            <span>六月 04, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MVC/">MVC</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Spring/">Spring</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+<p>这是个简单的教务系统网站，对系，专业，班级，课程信息，课程安排，学生管理进行维护。</p>
+<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><hr>
+<p>系统概述：</p>
+<ul>
+<li>简单的教务系统！</li>
+<li>前台主要是登录、查询信息等模块，后台主要完成功能有系，专业，班级，课程信息，课程安排，学生管理，</li>
+<li>后台系统先登录，才能操作这些信息：添加/修改/删除；</li>
+<li>没有登录，不能操作。</li>
+</ul>
+<h3 id="使用技术"><a href="#使用技术" class="headerlink" title="使用技术"></a>使用技术</h3><hr>
+<ul>
+<li><p>IoC容器:spring</p>
+<p>Spring框架</p>
+<p>​    1） Spring IOC容器 【Inversion Of Control,即控制反转】</p>
+<p>​        创建对象/处理对象依赖关系</p>
+<p>​    2） Aop编程</p>
+<p>​    3） Spring声明式事务管理</p>
+<p>​    4） 框架整合</p>
+<p>​        Spring与Struts</p>
+<p>​        Spring与Hibernate</p>
+<p>​    5）Spring对jdbc、hibernate操作的封装</p>
+<p>​        JdbcTemplate (dataSource)/ HibernateTemplate(SessionFactory)</p>
+</li>
+</ul>
+<ul>
+<li><p>web框架:springmvc</p>
+</li>
+<li><p>orm框架:mybatis</p>
+</li>
+<li><p>安全框架:shiro</p>
+</li>
+<li><p>数据源:dbcp2</p>
+</li>
+<li><p>日志: sl4j</p>
+</li>
+<li><p>Json: Gson</p>
+</li>
+<li><p>前端框架:Bootstrap</p>
+</li>
+</ul>
+<h2 id="Start"><a href="#Start" class="headerlink" title="Start:"></a>Start:</h2><hr>
+<blockquote>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><hr>
+<p>操作系统：Mac OS</p>
+<p>软件：</p>
+<ul>
+<li>Eclipse</li>
+<li>Tomcat</li>
+<li>MySQL Server</li>
+<li>Navicat</li>
+</ul>
+</blockquote>
+<h2 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h2><hr>
+<p>1)在终端开启MySQL。</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNC4zQ.jpg" alt="1"></p>
+<p>2)打开Navicat并创建一个数据库名字为yike,导入create.sql与populate.sql,直接运行其中sql即可</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNPgX9.jpg" alt="VNPgX9.jpg"></p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNPRmR.jpg" alt="VNPRmR.jpg"></p>
+<p>3)使用Eclipse导入项目,之后配置项目启动方式Tomcat</p>
+<p> <img src="https://s2.ax1x.com/2019/06/04/VNiN9O.jpg" alt="VNiN9O.jpg"></p>
+<p>4）你需要修改一下你数据库连接的用户名和密码</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNFpUx.jpg" alt="VNFpUx.jpg"></p>
+<p>5）运行</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNFdiV.jpg" alt="VNFdiV.jpg"></p>
+<p>6）运行结果</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNFHeA.jpg" alt="VNFHeA.jpg"><br><img src="https://s2.ax1x.com/2019/06/04/VNFosH.jpg" alt="VNFosH.jpg"></p>
+<h2 id="使用简介"><a href="#使用简介" class="headerlink" title="使用简介:"></a>使用简介:</h2><hr>
+<ol>
+<li>权限介绍:</li>
+</ol>
+<ul>
+<li><p>根据导入的populate.sql,运行网站初始时会存在四个权限角色:</p>
+<p> 1).管理员,账号为admin</p>
+<p> 2).学生,账号为student</p>
+<p> 3).教师,账号为teacher</p>
+<p> 4).供应商,账号为supplier</p>
+</li>
+</ul>
+<ul>
+<li>密码均为123456</li>
+</ul>
+<h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍:"></a>功能介绍:</h2><hr>
+<p>1.基本信息功能:</p>
+<p>其中可以设置一些基本的学校信息,也就是数据库中的实体-关系,之后就可以基于这些基本的关系信息进行更加复杂的功能,例如选课后可以记录多少学生选择了这门课程,只会教师提交图书后计算图书总数可以通过其中的关系得到</p>
+<p>​        1)系部信息</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkgXQ.md.jpg" alt="系添加"></p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkIhV.md.jpg" alt="系添加成功"></p>
+<p>​        2)专业信息</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNk4kq.md.jpg" alt="专业添加"></p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkOB9.md.jpg" alt="专业添加成功"></p>
+<p>​        3)班级信息</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkDtP.md.jpg" alt="班级添加"></p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkyp8.md.jpg" alt="班级添加成功"></p>
+<p>​        4)课程信息</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNk61S.md.jpg" alt="课程添加"></p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkd0A.md.jpg" alt="课程添加成功"></p>
+<p>​        5)学生管理</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNVkFI.jpg" alt="学生添加"></p>
+<p>​        6)用户管理</p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkf7n.md.jpg" alt="用户添加"></p>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNk5t0.md.jpg" alt="用户添加成功"></p>
+<p>其它功能请自行尝试，这里不做一一介绍。</p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><hr>
+<ul>
+<li>课程表：course</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNePPI.md.jpg" alt="课程表"></p>
+<ul>
+<li>班级表：class</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNe9IA.md.jpg" alt="班级表"></p>
+<ul>
+<li>系表：department</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNeiGt.md.jpg" alt="系表"></p>
+<ul>
+<li>角色表：role</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNepad.md.jpg" alt="角色表"></p>
+<ul>
+<li>学生表：student</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNeNdJ.md.jpg" alt="学生表"></p>
+<ul>
+<li>用户表：user</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNe8MT.md.jpg" alt="用户表"></p>
+<ul>
+<li>资源表：resource</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNeqoj.jpg" alt="资源表"></p>
+<ul>
+<li>员工表：staff</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNeEM8.md.jpg" alt="员工表"></p>
+<ul>
+<li>部门表：section</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNeFRP.md.jpg" alt="部门表"></p>
+<ul>
+<li>专业表：speciality</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNekxf.md.jpg" alt="专业表"></p>
+<ul>
+<li>时间表：timetable</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNeVsS.md.jpg" alt="时间表"></p>
+<ul>
+<li>数据库表结构:</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkwTI.md.jpg" alt="数据库表结构"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a277b937be540aba926b'
+        data-cs='9eb54bfed5d880c0db144ffd2bf963233ad8e294'
+        data-r='gitalk'
+        data-o='yutayouguan'
+        data-a='yutayouguan'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需求分析"><span class="toc-number">2.</span> <span class="toc-text">需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用技术"><span class="toc-number">2.1.</span> <span class="toc-text">使用技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Start"><span class="toc-number">3.</span> <span class="toc-text">Start:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#环境"><span class="toc-number">3.1.</span> <span class="toc-text">环境</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化项目"><span class="toc-number">4.</span> <span class="toc-text">初始化项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用简介"><span class="toc-number">5.</span> <span class="toc-text">使用简介:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能介绍"><span class="toc-number">6.</span> <span class="toc-text">功能介绍:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库设计"><span class="toc-number">7.</span> <span class="toc-text">数据库设计</span></a></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

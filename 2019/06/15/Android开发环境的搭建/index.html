@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Android开发环境的搭建 - 亦可</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="大学，编程，计算机科学与技术，iOS，JAVA，Python，Mac，黑苹果，C/C++,JAVAEE，数据库，SQL，MySQL，SQL Server,"> 
+    <meta name="description" content="这是我对学习生活中一些笔记，问题解决办法，和编程语言的学习技巧、经验的个人分享平台。,JDK安装
+JDK下载地址：(https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.htm,"> 
+    <meta name="author" content="王猛"> 
+    <link rel="alternative" href="atom.xml" title="亦可" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">亦可</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yutayouguan.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Android开发环境的搭建</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Android开发环境的搭建</h1>
+        <div class="stuff">
+            <span>六月 15, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ADT/">ADT</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Android/">Android</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Eclipse/">Eclipse</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/SDK/">SDK</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><hr>
+<p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">JDK下载地址：</a>(<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html</a>)</p>
+<p>Java Development Kit (JDK) 是太阳微系统针对Java开发人员发布的免费软件开发工具包(SDK，Software development kit)。JDK 是整个Java的核心，包括了Java运行环境、Java工具和Java基础类库。2006年太阳微系统宣布将发布基于GPL协议的开源JDK，使JDK成为自由软件。最新版本为Java SE Development Kit 11.0.2</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq8tx.md.png" alt="1"></p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq3A1.png" alt="2"></p>
+<p>在MacOS上，不需要配置环境变量，如果是Windows系统，</p>
+<ol>
+<li>新建变量名：JAVA_HOME，变量值：C:\Program Files\Java\jdk11.0.2</li>
+<li>打开PATH，添加变量值：%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</li>
+</ol>
+<p>备注：</p>
+<ol>
+<li>表示当前路径，%JAVA_HOME%就是引用前面指定的JAVA_HOME；</li>
+<li>JAVA_HOME指明JDK安装路径，此路径下包括lib，bin，jre等文件夹，tomcat，eclipse等的运行都需要依靠此变量。</li>
+<li>PATH使得系统可以在任何路径下识别java命令。</li>
+<li>CLASSPATH为java加载类(class or lib)路径，只有类在classpath中，java命令才能识别。</li>
+</ol>
+<ul>
+<li>测试JDK</li>
+</ul>
+<p>在CMD命令下输入javac，java，javadoc命令：出现关于JAVA的信息，表示安装成功。</p>
+<h2 id="IDE安装-eclipse"><a href="#IDE安装-eclipse" class="headerlink" title="IDE安装(eclipse)"></a>IDE安装(eclipse)</h2><hr>
+<p><a href="https://www.eclipse.org/downloads/packages/" target="_blank" rel="noopener">Eclipse下载地址：</a></p>
+<p>进入软件下载页面如下图所示，首先我们要了解eclipse是免费、开源的，而MyEclipse是收费的，它们就是所集成的插件不同，我们需要下载Eclipse IDE for  Java Developers，它有 Mac OS X 、Windows、Linux三大版本，根据自己的操作系统平台选择对应的版本。Eclipse 是一个开放源代码的、基于Java的可扩展开发平台。就其本身而言，它只是一个框架和一组服务，用于通过插件组件构建开发环境。幸运的是，Eclipse 附带了一个标准的插件集，包括Java开发工具（Java Development Kit，JDK）。</p>
+<p><img src="https://s2.ax1x.com/2019/06/18/VqCeLn.md.jpg" alt="19"></p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq5En.md.png" alt="20"></p>
+<p>下载好软件，打开软件安装包，我的安装过程很简单，把应用程序拖进Application文件夹就完成安装</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqhHs.png" alt="21"></p>
+<p>安装打开界面如图所示：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqINq.png" alt="22"></p>
+<p>工作台如图所示:</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqo40.md.png" alt="23"></p>
+<p>这个软件默认是英文的，对于英语不好的人显得不怎么友好（我个人建议不要汉化）但我还是写一下汉化教程：</p>
+<p>汉化包下载地址：(<a href="https://www.eclipse.org/babel/downloads.php" target="_blank" rel="noopener">https://www.eclipse.org/babel/downloads.php</a>)</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq7CV.md.png" alt="24"></p>
+<p>点击Chinese：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqH3T.md.png" alt="25"></p>
+<p>选择汉化比较完全的:</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqbgU.md.png" alt="26"></p>
+<p>解压此文件夹:</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqqvF.md.png" alt="27"></p>
+<p>重启软件后就是汉化的了</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqOu4.md.png" alt="28"></p>
+<p>汉化成功!</p>
+<h2 id="安装Android-SDK"><a href="#安装Android-SDK" class="headerlink" title="安装Android SDK"></a>安装Android SDK</h2><hr>
+<p><a href="https://developer.android.com/studio/?hl=pt-br#downloads" target="_blank" rel="noopener">下载地址：</a><a href="https://developer.android.com/studio/?hl=pt-br#downloads(如果不会科学上网，最后有直接下载地址)" target="_blank" rel="noopener">https://developer.android.com/studio/?hl=pt-br#downloads(如果不会科学上网，最后有直接下载地址)</a></p>
+<p>如果您不需要Android Studio，可以下载以下基本的Android命令行工具。您可以使用包含sdkmanager 来下载其他SDK包。这些工具包含在Android Studio中。</p>
+<p><img src="https://s2.ax1x.com/2019/06/18/VqCQiT.md.jpg" alt="SDK工具下载"></p>
+<h2 id="安装ADT"><a href="#安装ADT" class="headerlink" title="安装ADT"></a>安装ADT</h2><hr>
+<p>ADT下载地址：（如果不会科学上网，最后有直接下载地址）</p>
+<p>23.0.4：<a href="https://dl.google.com/android/ADT-23.0.4.zip" target="_blank" rel="noopener">https://dl.google.com/android/ADT-23.0.4.zip</a></p>
+<p>23.0.6：<a href="https://dl.google.com/android/ADT-23.0.6.zip" target="_blank" rel="noopener">https://dl.google.com/android/ADT-23.0.6.zip</a></p>
+<h2 id="可选安装Android-Studio进行Android的开发"><a href="#可选安装Android-Studio进行Android的开发" class="headerlink" title="可选安装Android Studio进行Android的开发"></a>可选安装Android Studio进行Android的开发</h2><hr>
+<p><a href="https://developer.android.google.cn/studio" target="_blank" rel="noopener">国外下载载地址</a>(<a href="https://developer.android.google.cn/studio)(如果不会科学上网，最后有直接下载地址)" target="_blank" rel="noopener">https://developer.android.google.cn/studio)(如果不会科学上网，最后有直接下载地址)</a></p>
+<p><a href="https://www.androiddevtools.cn/index.html" target="_blank" rel="noopener">国内下载地址</a>（<a href="https://www.androiddevtools.cn/index.html）" target="_blank" rel="noopener">https://www.androiddevtools.cn/index.html）</a></p>
+<p>目前官网推荐的是下载包含有Android SDK的Android Studio，使用<a href="http://developer.android.com/tools/help/sdk-manager.html" target="_blank" rel="noopener">SDK Manager</a>（可以设置g.cn:80作为SDK代理，实现免翻墙更新SDK）下载最新的SDK tools和platforms。</p>
+<p><img src="https://s2.ax1x.com/2019/06/18/VqCKoV.md.jpg" alt="下载andriod studio"></p>
+<p><img src="https://s2.ax1x.com/2019/06/18/VqCud0.md.jpg" alt="andriod studio"></p>
+<p>如果需要汉化andriod studio的请看这里：</p>
+<p>Android Studio 翻译组项目</p>
+<p><a href="https://github.com/AndroidStudioTranslate/Android-Studio-Translate" target="_blank" rel="noopener">地址</a>(<a href="https://github.com/AndroidStudioTranslate/Android-Studio-Translate" target="_blank" rel="noopener">https://github.com/AndroidStudioTranslate/Android-Studio-Translate</a>)</p>
+<p> 最新汉化包集<a href="https://github.com/AndroidStudioTranslate/Android-Studio-Translate/blob/master/jar/" target="_blank" rel="noopener">release</a></p>
+<ol>
+<li><p>翻译库规则resources_en文件夹请勿随意修改(当前版本AI-141.2240497)</p>
+</li>
+<li><p>文件夹命名方式’resources_’+’语言英文’，翻译请在相应语言文件夹内文件中进行修改，例如，英文为resources_en，中文为resources_zh</p>
+</li>
+<li><p>目前，先翻译.properties后缀文件</p>
+</li>
+<li><p>重点来了，也是翻译的关键，翻译后请转换成Unicode</p>
+<p><strong><em>工具</em></strong></p>
+<ol>
+<li>工具地址：<a href="https://github.com/AndroidStudioTranslate/Android-Studio-Translate-Tool" target="_blank" rel="noopener">https://github.com/AndroidStudioTranslate/Android-Studio-Translate-Tool</a></li>
+<li>工具使用命令：java -jar TranslationAS.jar(新建lib文件夹,并复制相关的库到lib)</li>
+<li>工具说明：该工具直接选择resources_en.jar,点击获取jar包目录，勾选翻译，双击列表会自动翻译成中文，翻译完一个属性文件后点击保存属性值文件，翻译完后，请从新生成的jar包中将相应的属性文件在该库中进行修改。（工具会自动进行编码转换，使用netbeans开发）</li>
+<li>jdk版本: 1.7+</li>
+</ol>
+</li>
+</ol>
+<h2 id="全部下载地址："><a href="#全部下载地址：" class="headerlink" title="全部下载地址："></a>全部下载地址：</h2><hr>
+<p>由于大陆直接访问Android的官方网站一般情况下比较困难，特此列出了Android各个SDK版本的直接下载地址。</p>
+<h3 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h3><hr>
+<p>官网各版本下载链接：</p>
+<blockquote>
+<p><a href="https://dl.google.com/android/ADT-23.0.7.zip" target="_blank" rel="noopener">https://dl.google.com/android/ADT-23.0.7.zip</a><br><a href="https://dl.google.com/android/ADT-23.0.6.zip" target="_blank" rel="noopener">https://dl.google.com/android/ADT-23.0.6.zip</a><br><a href="http://dl.google.com/android/ADT-23.0.4.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-23.0.4.zip</a><br><a href="http://dl.google.com/android/ADT-23.0.3.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-23.0.3.zip</a><br><a href="http://dl.google.com/android/ADT-23.0.2.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-23.0.2.zip</a><br><a href="http://dl.google.com/android/ADT-23.0.0.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-23.0.0.zip</a><br><a href="http://dl.google.com/android/ADT-22.6.3.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.6.3.zip</a><br><a href="http://dl.google.com/android/ADT-22.6.2.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.6.2.zip</a><br><a href="http://dl.google.com/android/ADT-22.6.1.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.6.1.zip</a><br><a href="http://dl.google.com/android/ADT-22.6.0.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.6.0.zip</a><br><a href="http://dl.google.com/android/ADT-22.3.0.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.3.0.zip</a><br><a href="http://dl.google.com/android/ADT-22.2.1.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.2.1.zip</a><br><a href="http://dl.google.com/android/ADT-22.2.0.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.2.0.zip</a><br><a href="http://dl.google.com/android/ADT-22.0.5.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.0.5.zip</a><br><a href="http://dl.google.com/android/ADT-22.0.4.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.0.4.zip</a><br><a href="http://dl.google.com/android/ADT-22.0.1.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.0.1.zip</a><br><a href="http://dl.google.com/android/ADT-22.0.0.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-22.0.0.zip</a><br><a href="http://dl.google.com/android/ADT-21.1.0.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-21.1.0.zip</a><br><a href="http://dl.google.com/android/ADT-21.0.1.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-21.0.1.zip</a><br><a href="http://dl.google.com/android/ADT-21.0.0.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-21.0.0.zip</a><br><a href="http://dl.google.com/android/ADT-20.0.3.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-20.0.3.zip</a><br><a href="http://dl.google.com/android/ADT-20.0.2.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-20.0.2.zip</a><br><a href="http://dl.google.com/android/ADT-20.0.1.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-20.0.1.zip</a><br><a href="http://dl.google.com/android/ADT-20.0.0.zip" target="_blank" rel="noopener">http://dl.google.com/android/ADT-20.0.0.zip</a> </p>
+</blockquote>
+<h3 id="SDK——23-0-2"><a href="#SDK——23-0-2" class="headerlink" title="SDK——23.0.2"></a>SDK——23.0.2</h3><hr>
+<p>Windows32 &amp; 64-bit:<a href="http://dl.google.com/android/android-sdk_r23.0.2-windows.zip" target="_blank" rel="noopener">http://dl.google.com/android/android-sdk_r23.0.2-windows.zip</a></p>
+<p>Windows32 &amp; 64-bit:<a href="http://dl.google.com/android/installer_r23.0.2-windows.exe" target="_blank" rel="noopener">http://dl.google.com/android/installer_r23.0.2-windows.exe</a></p>
+<p>Mac OS X32 &amp; 64-bit:<a href="http://dl.google.com/android/android-sdk_r23.0.2-macosx.zip" target="_blank" rel="noopener">http://dl.google.com/android/android-sdk_r23.0.2-macosx.zip</a></p>
+<p>Linux32 &amp; 64-bit:<a href="http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz" target="_blank" rel="noopener">http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz</a></p>
+<h3 id="SDK——24-1-2"><a href="#SDK——24-1-2" class="headerlink" title="SDK——24.1.2"></a>SDK——24.1.2</h3><hr>
+<blockquote>
+<p>Windows32 &amp; 64-bit:<a href="http://dl.google.com/android/android-sdk_r24.1.2-windows.zip" target="_blank" rel="noopener">http://dl.google.com/android/android-sdk_r24.1.2-windows.zip</a></p>
+<p>Windows32 &amp; 64-bit:<a href="http://dl.google.com/android/installer_r24.1.2-windows.exe" target="_blank" rel="noopener">http://dl.google.com/android/installer_r24.1.2-windows.exe</a></p>
+<p>Mac OS X32 &amp; 64-bit:<a href="http://dl.google.com/android/android-sdk_r24.1.2-macosx.zip" target="_blank" rel="noopener">http://dl.google.com/android/android-sdk_r24.1.2-macosx.zip</a></p>
+<p>Linux32 &amp; 64-bit:<a href="http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz" target="_blank" rel="noopener">http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz</a></p>
+</blockquote>
+<h3 id="Android-Studio——V3-4-1"><a href="#Android-Studio——V3-4-1" class="headerlink" title="Android Studio——V3.4.1."></a>Android Studio——V3.4.1.</h3><hr>
+<p>中文网址：<a href="http://www.android-studio.org/" target="_blank" rel="noopener">http://www.android-studio.org/</a></p>
+<blockquote>
+<p>Windows(64-bit):<a href="https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-windows.exe" target="_blank" rel="noopener">https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-windows.exe</a></p>
+<p>No .exe installer</p>
+<p><a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-windows.zip" target="_blank" rel="noopener">https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-windows.zip</a></p>
+<p>Windows(32-bit):<a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-windows32.zip" target="_blank" rel="noopener">https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-windows32.zip</a></p>
+<p>MAC:<a href="https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-mac.dmg" target="_blank" rel="noopener">https://dl.google.com/dl/android/studio/install/3.4.1.0/android-studio-ide-183.5522156-mac.dmg</a></p>
+<p>Linux:<a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-linux.tar.gz" target="_blank" rel="noopener">https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-linux.tar.gz</a></p>
+</blockquote>
+<h3 id="ADT-Bundle——23-0-2"><a href="#ADT-Bundle——23-0-2" class="headerlink" title="ADT Bundle——23.0.2"></a>ADT Bundle——23.0.2</h3><p>由于历史原因，我给你的链接到最后版本的ADT：</p>
+<blockquote>
+<p>linux 64 bit：<a href="http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip" target="_blank" rel="noopener">http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip</a><br>linux 32 bit：<a href="http://dl.google.com/android/adt/adt-bundle-linux-x86-20140702.zip" target="_blank" rel="noopener">http://dl.google.com/android/adt/adt-bundle-linux-x86-20140702.zip</a><br>MacOS X：<a href="http://dl.google.com/android/adt/adt-bundle-mac-x86_64-20140702.zip" target="_blank" rel="noopener">http://dl.google.com/android/adt/adt-bundle-mac-x86_64-20140702.zip</a><br>Win32：<a href="http://dl.google.com/android/adt/adt-bundle-windows-x86-20140702.zip" target="_blank" rel="noopener">http://dl.google.com/android/adt/adt-bundle-windows-x86-20140702.zip</a><br>Win64：<a href="http://dl.google.com/android/adt/adt-bundle-windows-x86_64-20140702.zip" target="_blank" rel="noopener">http://dl.google.com/android/adt/adt-bundle-windows-x86_64-20140702.zip</a></p>
+</blockquote>
+<hr>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a277b937be540aba926b'
+        data-cs='9eb54bfed5d880c0db144ffd2bf963233ad8e294'
+        data-r='gitalk'
+        data-o='yutayouguan'
+        data-a='yutayouguan'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK安装"><span class="toc-number">1.</span> <span class="toc-text">JDK安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE安装-eclipse"><span class="toc-number">2.</span> <span class="toc-text">IDE安装(eclipse)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Android-SDK"><span class="toc-number">3.</span> <span class="toc-text">安装Android SDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装ADT"><span class="toc-number">4.</span> <span class="toc-text">安装ADT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可选安装Android-Studio进行Android的开发"><span class="toc-number">5.</span> <span class="toc-text">可选安装Android Studio进行Android的开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#全部下载地址："><span class="toc-number">6.</span> <span class="toc-text">全部下载地址：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ADT"><span class="toc-number">6.1.</span> <span class="toc-text">ADT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDK——23-0-2"><span class="toc-number">6.2.</span> <span class="toc-text">SDK——23.0.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDK——24-1-2"><span class="toc-number">6.3.</span> <span class="toc-text">SDK——24.1.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-Studio——V3-4-1"><span class="toc-number">6.4.</span> <span class="toc-text">Android Studio——V3.4.1.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ADT-Bundle——23-0-2"><span class="toc-number">6.5.</span> <span class="toc-text">ADT Bundle——23.0.2</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

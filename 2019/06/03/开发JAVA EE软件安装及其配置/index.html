@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>开发JAVA EE软件安装及其配置 - 亦可</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="大学，编程，计算机科学与技术，iOS，JAVA，Python，Mac，黑苹果，C/C++,JAVAEE，数据库，SQL，MySQL，SQL Server,"> 
+    <meta name="description" content="这是我对学习生活中一些笔记，问题解决办法，和编程语言的学习技巧、经验的个人分享平台。,JDK安装
+JDK下载地址：
+Java Development Kit (JDK) 是太阳微系统针对Java开发人员发布的免费软件开发工具包(SDK，Software development kit,"> 
+    <meta name="author" content="王猛"> 
+    <link rel="alternative" href="atom.xml" title="亦可" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">亦可</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yutayouguan.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">开发JAVA EE软件安装及其配置</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">开发JAVA EE软件安装及其配置</h1>
+        <div class="stuff">
+            <span>六月 03, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Eclipse/">Eclipse</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MySQL/">MySQL</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Navcat/">Navcat</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Tomecat/">Tomecat</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><hr>
+<p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">JDK下载地址：</a></p>
+<p>Java Development Kit (JDK) 是太阳微系统针对Java开发人员发布的免费软件开发工具包(SDK，Software development kit)。JDK 是整个Java的核心，包括了Java运行环境、Java工具和Java基础类库。2006年太阳微系统宣布将发布基于GPL协议的开源JDK，使JDK成为自由软件。最新版本为Java SE Development Kit 11.0.2</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq8tx.md.png" alt="1"></p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq3A1.png" alt="2"></p>
+<p>在MacOS上，不需要配置环境变量，如果是Windows系统，</p>
+<ol>
+<li><p>新建变量名：JAVA_HOME，变量值：C:\Program Files\Java\jdk11.0.2</p>
+</li>
+<li><p>打开PATH，添加变量值：%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</p>
+</li>
+</ol>
+<p>备注：</p>
+<ol>
+<li><p>表示当前路径，%JAVA_HOME%就是引用前面指定的JAVA_HOME；</p>
+</li>
+<li><p>JAVA_HOME指明JDK安装路径，此路径下包括lib，bin，jre等文件夹，tomcat，eclipse等的运行都需要依靠此变量。</p>
+</li>
+<li><p>PATH使得系统可以在任何路径下识别java命令。</p>
+</li>
+<li><p>CLASSPATH为java加载类(class or lib)路径，只有类在classpath中，java命令才能识别。</p>
+</li>
+</ol>
+<ul>
+<li>测试JDK</li>
+</ul>
+<p>在CMD命令下输入javac，java，javadoc命令：出现关于JAVA的信息，表示安装成功。</p>
+<h2 id="web服务器安装-Tomcat"><a href="#web服务器安装-Tomcat" class="headerlink" title="web服务器安装(Tomcat)"></a>web服务器安装(Tomcat)</h2><hr>
+<p><a href="https://tomcat.apache.org" target="_blank" rel="noopener">Tomcat下载地址：</a></p>
+<p>当配置正确时，Apache 为HTML页面服务，而Tomcat 实际上运行JSP 页面和Servlet。另外，Tomcat和IIS等Web服务器一样，具有处理HTML页面的功能，另外它还是一个Servlet和JSP容器，独立的Servlet容器是Tomcat的默认模式。不过，Tomcat处理静态HTML的能力不如Apache服务器。目前Tomcat最新版本为9.0。</p>
+<ul>
+<li><p>点击Tomcat 9</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqY9K.md.png" alt="3"></p>
+</li>
+<li><p>点击9.0.16</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqGh6.md.png" alt="4"></p>
+</li>
+<li><p>按照自己系统下载对应版本（Tomcat不区分操作系统，下载哪一个都可以，建议不要下载安装版）</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGql7R.md.png" alt="5"></p>
+</li>
+<li><p>下载后解压到根目录</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqNcD.md.png" alt="5"></p>
+</li>
+<li><p>启动Tomcat：</p>
+<ul>
+<li><p>在终端输入sudo sh startup.sh</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqUje.png" alt="6"></p>
+</li>
+</ul>
+</li>
+<li><p>在浏览器里输入：<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p>
+<ul>
+<li><p>如果出现一下界面则说明配置成功：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqt1O.md.png" alt="7"></p>
+</li>
+</ul>
+</li>
+<li><p>关闭Tomcat：</p>
+<ul>
+<li><p>在终端输入sudo sh shutdown.sh</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqwBd.png" alt="8"></p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>附：Window10下配置Tomcat环境变量</p>
+<ol>
+<li><p>新建变量名：CATALINA_BASE，变量值：C:\tomcat</p>
+</li>
+<li><p>新建变量名：CATALINA_HOME，变量值：C:\tomcat</p>
+</li>
+<li><p>打开PATH，添加变量值：%CATALINA_HOME%\lib;%CATALINA_HOME%\bin</p>
+</li>
+</ol>
+<ul>
+<li><p>启动Tomcat服务</p>
+</li>
+<li><p>方法两种：</p>
+</li>
+</ul>
+<ol>
+<li><p>方法一：在CMD命令下输入命令：startup，出现如下对话框，表明服务启动成功。</p>
+</li>
+<li><p>方法二：右键点击桌面上的“我的电脑”-&gt;“管理”-&gt;“服务和应用程序”-&gt;“服务”，找到“Apache     Tomcat”服务，右键点击该服务，选择“属性”，将“启动类型”由“手动”改成“自动”。</p>
+</li>
+</ol>
+<ul>
+<li>测试Tomcat<ul>
+<li>打开浏览器，在地址栏中输入<a href="http://localhost:8080回车，如果看到Tomcat自带的一个JSP页面，说明你的JDK和Tomcat已搭建成功。" target="_blank" rel="noopener">http://localhost:8080回车，如果看到Tomcat自带的一个JSP页面，说明你的JDK和Tomcat已搭建成功。</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="数据库安装-MySQL"><a href="#数据库安装-MySQL" class="headerlink" title="数据库安装(MySQL)"></a>数据库安装(MySQL)</h2><hr>
+<p><a href="www.mysql.com">MySQL下载地址：</a> </p>
+<p>点击DOWNLOADS-&gt;Community-&gt;MySQL Community Server</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqdnH.md.png" alt="9"></p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq0HA.md.png" alt="10"></p>
+<p>安装：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqs4P.md.png" alt="11"></p>
+<p>全部默认选项安装；</p>
+<p>安装之后打开偏好设置</p>
+<p>点击MySQL，开启mysql</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqDAI.png" alt="12"></p>
+<p>在终端中输入mysql路径：</p>
+<p>PATH=”$PATH”:/usr/local/mysql/bin</p>
+<p>在终端登录到MySQL的命令如下</p>
+<p>mysql -u root -p</p>
+<p>如果显示的内容如下，即是已经成功登录到MySQL服务：</p>
+<p>展示mysql的端口</p>
+<p>show global variables like ‘port’;</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqrNt.png" alt="13"></p>
+<blockquote>
+<p>附window 安装教程:</p>
+<p>最新版本可以在 <a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">MySQL 下载</a> 中下载中查看。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/03/330405-20160709174318905-664331194.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/03/20DBD7BA-A653-4AE3-887E-2A16E6EBB2E3.png" alt="img"></p>
+<p>点击 </p>
+<p>Download</p>
+<p> 按钮进入下载页面，点击下图中的 </p>
+<p>No thanks, just start my download.</p>
+<p> 就可立即下载：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/03/330405-20160709174941374-1821908969.png" alt="img"></p>
+<p>下载完后，我们将 zip 包解压到相应的目录，这里我将解压后的文件夹放在 <strong>C:\web\mysql-8.0.11</strong> 下。</p>
+<p><strong>接下来我们需要配置下 MySQL 的配置文件</strong></p>
+<p>打开刚刚解压的文件夹 <strong>C:\web\mysql-8.0.11</strong> ，在该文件夹下创建 <strong>my.ini</strong> 配置文件，编辑 <strong>my.ini</strong> 配置以下基本信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt; [mysql]</span><br><span class="line">&gt; # 设置mysql客户端默认字符集</span><br><span class="line">&gt; default-character-set=utf8</span><br><span class="line">&gt;  </span><br><span class="line">&gt; [mysqld]</span><br><span class="line">&gt; # 设置3306端口</span><br><span class="line">&gt; port = 3306</span><br><span class="line">&gt; # 设置mysql的安装目录</span><br><span class="line">&gt; basedir=C:\\web\\mysql-8.0.11</span><br><span class="line">&gt; # 设置 mysql数据库的数据的存放目录，MySQL 8+ 不需要以下配置，系统自己生成即可，否则有可能报错</span><br><span class="line">&gt; # datadir=C:\\web\\sqldata</span><br><span class="line">&gt; # 允许最大连接数</span><br><span class="line">&gt; max_connections=20</span><br><span class="line">&gt; # 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line">&gt; character-set-server=utf8</span><br><span class="line">&gt; # 创建新表时将使用的默认存储引擎</span><br><span class="line">&gt; default-storage-engine=INNODB</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><strong>接下来我们来启动下 MySQL 数据库：</strong></p>
+<p>以管理员身份打开 cmd 命令行工具，切换目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd C:\web\mysql-8.0.11\bin</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>初始化数据库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; mysqld --initialize --console</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>执行完成后，会输出 root 用户的初始默认密码，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; ...</span><br><span class="line">&gt; 2018-04-20T02:35:05.464644Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: APWCY5ws&amp;hjQ</span><br><span class="line">&gt; ...</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><strong>APWCY5ws&amp;hjQ</strong> 就是初始密码，后续登录需要用到，你也可以在登陆后修改密码。</p>
+<p>输入以下安装命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; mysqld install</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>启动输入以下命令即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; net start mysql</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>注意: 在 5.7 需要初始化 data 目录：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; cd C:\web\mysql-8.0.11\bin </span><br><span class="line">&gt; &gt; mysqld --initialize-insecure </span><br><span class="line">&gt; &gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>初始化后再运行 net start mysql 即可启动 mysql。</p>
+</blockquote>
+<p>登录MySQL</p>
+<p>当 MySQL 服务已经运行时, 我们可以通过 MySQL 自带的客户端工具登录到 MySQL 数据库中, 首先打开命令提示符, 输入以下格式的命名:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; mysql -h 主机名 -u 用户名 -p</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>参数说明：</p>
+<ul>
+<li><strong>-h</strong> : 指定客户端所要登录的 MySQL 主机名, 登录本机(localhost 或 127.0.0.1)该参数可以省略;</li>
+<li><strong>-u</strong> : 登录的用户名;</li>
+<li><strong>-p</strong> : 告诉服务器将会使用一个密码来登录, 如果所要登录的用户名密码为空, 可以忽略此选项。</li>
+</ul>
+<p>如果我们要登录本机的 MySQL 数据库，只需要输入以下命令即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; mysql -u root -p</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>按回车确认, 如果安装正确且 MySQL 正在运行, 会得到以下响应:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Enter password:</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>若密码存在, 输入密码登录, 不存在则直接按回车登录。登录成功后你将会看到 Welcome to the MySQL monitor… 的提示语。</p>
+<p>然后命令提示符会一直以 <strong>mysq&gt;</strong> 加一个闪烁的光标等待命令的输入, 输入 <strong>exit</strong> 或 <strong>quit</strong> 退出登录。</p>
+<p>启动和关闭MySQL</p>
+<p>在 Windows 系统下，打开命令窗口(cmd)，进入 MySQL 安装目录的 bin 目录。</p>
+<p>启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd c:/mysql/bin</span><br><span class="line">&gt; mysqld --console</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>关闭：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd c:/mysql/bin</span><br><span class="line">&gt; mysqladmin -uroot shutdown</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="Navicat-Premium安装"><a href="#Navicat-Premium安装" class="headerlink" title="Navicat Premium安装"></a>Navicat Premium安装</h2><hr>
+<p>Navicat Premium下载地址：</p>
+<p><a href="https://pan.baidu.com/s/1Aha2tg98xQiZJEdjFHLjWg" target="_blank" rel="noopener">链接:</a> 提取码: vzuj </p>
+<p>此链接为我本人分享的链接，里面有最新的Navicat Premium12.0版本给大家，有 Mac OS X 、Windows、Linux三大版本，根据自己的操作系统平台选择对应的版本。</p>
+<p>Navicat是一套快速、可靠并价格相当便宜的数据库管理工具，专为简化数据库的管理及降低系统管理成本而设。它的设计符合数据库管理员、开发人员及中小企业的需要。Navicat 是以直觉化的图形用户界面而建的，让你可以以安全并且简单的方式创建、组织、访问并共用信息。</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq69f.md.png" alt="14"></p>
+<p>安装很简单，拖放进Applications文件夹就可以了，如下图：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqc38.png" alt="15"></p>
+<p>Navicat软件工作界面如下图所示：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqfBj.md.png" alt="16"></p>
+<p>Navicat连接mysql</p>
+<p>点击 链接接-MySQL</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqggS.md.png" alt="17"></p>
+<p>点击你的数据库右键点击连接:</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqWuQ.md.png" alt="18"></p>
+<p>如果遇到这种情况 MySQL said: Authentication plugin ‘caching_sha2_password’ cannot be loaded: dlopen(/usr/local/lib/plugin/caching_sha2_password.so, 2): image not found</p>
+<p>解决方案：</p>
+<p>打开系统偏好设置，找到mysql，点击Initialize Database。</p>
+<p>输入你的新密码，记住这个密码，用于后期链接数据库的登陆使用。</p>
+<p>选择‘Use legacy password‘。</p>
+<p>重启mysql服务。</p>
+<p>使用sequel Pro链接。</p>
+<p>在重新链接就好了</p>
+<h2 id="IDE安装-eclipse"><a href="#IDE安装-eclipse" class="headerlink" title="IDE安装(eclipse)"></a>IDE安装(eclipse)</h2><hr>
+<p><a href="https://www.eclipse.org/downloads/packages/" target="_blank" rel="noopener">Eclipse下载地址：</a></p>
+<p>进入软件下载页面如下图所示，首先我们要了解eclipse是免费、开源的，而MyEclipse是收费的，它们就是所集成的插件不同，我们需要下载Eclipse IDE for Enterprise Java Developers，它有 Mac OS X 、Windows、Linux三大版本，根据自己的操作系统平台选择对应的版本。Eclipse 是一个开放源代码的、基于Java的可扩展开发平台。就其本身而言，它只是一个框架和一组服务，用于通过插件组件构建开发环境。幸运的是，Eclipse 附带了一个标准的插件集，包括Java开发工具（Java Development Kit，JDK）。</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqXDJ.md.png" alt="19"></p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq5En.md.png" alt="20"></p>
+<p>下载好软件，打开软件安装包，我的安装过程很简单，把应用程序拖进Application文件夹就完成安装</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqhHs.png" alt="21"></p>
+<p>安装打开界面如图所示：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqINq.png" alt="22"></p>
+<p>工作台如图所示:</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqo40.md.png" alt="23"></p>
+<p>这个软件默认是英文的，对于英语不好的人显得不怎么友好（我个人建议不要汉化）但我还是写一下汉化教程：</p>
+<p>汉化包下载地址：(<a href="https://www.eclipse.org/babel/downloads.php" target="_blank" rel="noopener">https://www.eclipse.org/babel/downloads.php</a>)</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGq7CV.md.png" alt="24"></p>
+<p>点击Chinese：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqH3T.md.png" alt="25"></p>
+<p>选择汉化比较完全的:</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqbgU.md.png" alt="26"></p>
+<p>解压此文件夹:</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqqvF.md.png" alt="27"></p>
+<p>重启软件后就是汉化的了</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqOu4.md.png" alt="28"></p>
+<p>汉化成功!</p>
+<p>添加服务器：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqjb9.md.png" alt="29"></p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGqzU1.md.png" alt="30"></p>
+<p>创建第一个JSP文件并运行：</p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGLS4x.md.png" alt="31"></p>
+<p><img src="https://s2.ax1x.com/2019/06/02/VGL9C6.md.png" alt="32"></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr>
+<p>配图为本人亲自操作过程中的截图，这也是学JAVA EE的开始，工欲善其事，必先利其器。把开发和测试环境构建好是必须的，这次搭建开发和测试环境让会在今后JAVA EE的开发上的道路上解决了一个很大的绊脚石。</p>
+<p>END</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a277b937be540aba926b'
+        data-cs='9eb54bfed5d880c0db144ffd2bf963233ad8e294'
+        data-r='gitalk'
+        data-o='yutayouguan'
+        data-a='yutayouguan'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK安装"><span class="toc-number">1.</span> <span class="toc-text">JDK安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web服务器安装-Tomcat"><span class="toc-number">2.</span> <span class="toc-text">web服务器安装(Tomcat)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库安装-MySQL"><span class="toc-number">3.</span> <span class="toc-text">数据库安装(MySQL)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Navicat-Premium安装"><span class="toc-number">4.</span> <span class="toc-text">Navicat Premium安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE安装-eclipse"><span class="toc-number">5.</span> <span class="toc-text">IDE安装(eclipse)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-number">6.</span> <span class="toc-text">结语</span></a></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

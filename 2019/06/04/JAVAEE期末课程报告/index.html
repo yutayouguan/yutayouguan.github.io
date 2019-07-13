@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>基于JAVAEE开发的简单的教务网站 - 亦可</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="大学，编程，计算机科学与技术，iOS，JAVA，Python，Mac，黑苹果，C/C++,JAVAEE，数据库，SQL，MySQL，SQL Server,"> 
+    <meta name="description" content="这是我对学习生活中一些笔记，问题解决办法，和编程语言的学习技巧、经验的个人分享平台。,一、课程报告简介
+“Java EE 技术”是计算机专业本科学生必修的重要专业课程。通过本课程的教学，帮助学生了解Java EE编程设计思想，能够初步运用Java EE技术和基本开发工具进行B/S架构,"> 
+    <meta name="author" content="王猛"> 
+    <link rel="alternative" href="atom.xml" title="亦可" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">亦可</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yutayouguan.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">基于JAVAEE开发的简单的教务网站</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">基于JAVAEE开发的简单的教务网站</h1>
+        <div class="stuff">
+            <span>六月 04, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MVC/">MVC</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Spring/">Spring</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="一、课程报告简介"><a href="#一、课程报告简介" class="headerlink" title="一、课程报告简介"></a>一、课程报告简介</h2><hr>
+<p>“Java EE 技术”是计算机专业本科学生必修的重要专业课程。通过本课程的教学，帮助学生了解Java EE编程设计思想，能够初步运用Java EE技术和基本开发工具进行B/S架构的软件代码设计。培养学生用新一代程序设计思想和逻辑思维方式进行计算机编程研究，启发学生的创新意识，提高学生在软件设计过程中分析问题和解决问题的实际动手能力，使学生的理论知识和实践技能得到共同发展。实际应用能力将在上机实验中得到锻炼。本课程把各专业基础知识综合在一起，培养提高学生专业能力，为同学走向社会、就业等奠定了坚实的自信心和牢固专业知识，极大的提高同学在社会就业竞争中的竞争力。</p>
+<h2 id="二、课程报告目的"><a href="#二、课程报告目的" class="headerlink" title="二、课程报告目的"></a>二、课程报告目的</h2><hr>
+<ol>
+<li><p>掌握计算机专业知识，能针对工程问题进行分析与设计。</p>
+</li>
+<li><p>能运用计算机工程的思维方法，针对工程问题合理选择相关实现技术，提出优化解决方案。</p>
+</li>
+<li><p>能够运用计算机专业知识设计功能模块及系统整体解决方案，并能对方案进行优化，体现创新意识。</p>
+</li>
+<li><p>能够掌握Java EE Web技术进行软件系统开发的基本方法，并选择合适工具进行测试。</p>
+</li>
+<li><p>能够掌应用系统。握并理解常见的软件设计方法，能够运用Servlet、JSP、JDBC技术开发简单的Web</p>
+</li>
+</ol>
+<h2 id="三、编程环境"><a href="#三、编程环境" class="headerlink" title="三、编程环境"></a>三、编程环境</h2><hr>
+<p>OS：Mac OS</p>
+<p>软件：Eclipse IDE</p>
+<h2 id="四、报告内容"><a href="#四、报告内容" class="headerlink" title="四、报告内容"></a>四、报告内容</h2><hr>
+<h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>这是个简单的教务系统网站，对系，专业，班级，课程信息，课程安排，学生管理进行维护。</p>
+<h3 id="2-需求分析"><a href="#2-需求分析" class="headerlink" title="2. 需求分析"></a>2. 需求分析</h3><h4 id="2-1-系统概述："><a href="#2-1-系统概述：" class="headerlink" title="2.1 系统概述："></a>2.1 系统概述：</h4><p>- 简单的教务系统</p>
+<p>- 前台主要是登录、查询信息等模块，后台主要完成功能有系，专业，班级，课程信息，课程安排，学生管理，</p>
+<p>- 后台系统先登录，才能操作这些信息：添加/修改/删除；</p>
+<p>- 没有登录，不能操作。</p>
+<p><img src="https://s2.ax1x.com/2019/06/09/VsyIuF.png" alt="用例图"></p>
+<h4 id="2-2功能分类"><a href="#2-2功能分类" class="headerlink" title="2.2功能分类:"></a>2.2功能分类:</h4><p>【管理员模块:】</p>
+<p>1）注册/登陆</p>
+<p>2）用户管理</p>
+<p>3）学院管理</p>
+<p>4）角色管理</p>
+<p>【用户模块：】</p>
+<p>对系，专业，班级，课程信息，课程安排，学生进行信息管理</p>
+<p>​    比如 ：</p>
+<p>1）添加一个学生, 指定添加的院系</p>
+<p>​     2) 对指定的学生信息修改</p>
+<p>​     3) 删除选择学生</p>
+<p>​     4) 列表展示</p>
+<h3 id="3-设计"><a href="#3-设计" class="headerlink" title="3.设计"></a>3.设计</h3><h4 id="3-1-系统设计"><a href="#3-1-系统设计" class="headerlink" title="3.1 系统设计"></a>3.1 系统设计</h4><p>主要做下面的事情,</p>
+<p>​    1) 搭建系统框架结构</p>
+<p>​        (基于mvc结构应用)</p>
+<p>​    2) 确定项目的关键点/难点</p>
+<p>​    3) 确定引用组件、公用类的版本</p>
+<p>​        Struts2.3 </p>
+<p>​        Hibernate3.6</p>
+<p>​        Spring3.2</p>
+<h4 id="3-2-数据库的设计"><a href="#3-2-数据库的设计" class="headerlink" title="3.2 数据库的设计"></a>3.2 数据库的设计</h4><p>课程表：course</p>
+<p>班级表：class</p>
+<p>系表：department</p>
+<p>角色表：role</p>
+<p>学生表：student</p>
+<p>用户表：user</p>
+<p>资源表：resource</p>
+<p>员工表：staff</p>
+<p>部门表：section</p>
+<p>专业表：speciality</p>
+<p>时间表：timetable</p>
+<p>数据库表结构:</p>
+<p> <img src="https://s2.ax1x.com/2019/06/07/V0ZTpj.png" alt="数据库表结构图"></p>
+<h4 id="3-3-代码"><a href="#3-3-代码" class="headerlink" title="3.3  代码"></a>3.3  代码</h4><h5 id="3-3-1-设计数据库：yike"><a href="#3-3-1-设计数据库：yike" class="headerlink" title="3.3.1 设计数据库：yike"></a>3.3.1 设计数据库：yike</h5><p>建表：</p>
+<p>文件：</p>
+<p>（1）create.sql 、</p>
+<p>（2）populate.sql</p>
+<h5 id="3-3-2-建立web项目、引入jar文件、准备环境"><a href="#3-3-2-建立web项目、引入jar文件、准备环境" class="headerlink" title="3.3.2 建立web项目、引入jar文件、准备环境"></a>3.3.2 建立web项目、引入jar文件、准备环境</h5><h5 id="3-3-3-设计javabean、写映射"><a href="#3-3-3-设计javabean、写映射" class="headerlink" title="3.3.3 设计javabean、写映射"></a>3.3.3 设计javabean、写映射</h5><p>Course.java/user.java/student.java/role.java/…</p>
+<h5 id="3-3-4-Dao设计接口"><a href="#3-3-4-Dao设计接口" class="headerlink" title="3.3.4  Dao设计接口"></a>3.3.4  Dao设计接口</h5><p>*Dao.java</p>
+<p>*Dao.xml</p>
+<h5 id="3-3-5-Service接口实现"><a href="#3-3-5-Service接口实现" class="headerlink" title="3.3.5  Service接口实现"></a>3.3.5  Service接口实现</h5><p>*Biz.java</p>
+<h5 id="3-3-6-Action实现"><a href="#3-3-6-Action实现" class="headerlink" title="3.3.6  Action实现"></a>3.3.6  Action实现</h5><p>*Controller.java</p>
+<h5 id="3-3-7-JSP页面"><a href="#3-3-7-JSP页面" class="headerlink" title="3.3.7 JSP页面"></a>3.3.7 JSP页面</h5><p>login.jsp/bottom.jsp/main.jsp/nav.jsp/<em>_add.jsp/</em>_update.jsp</p>
+<h5 id="3-3-8-用户登陆拦截器"><a href="#3-3-8-用户登陆拦截器" class="headerlink" title="3.3.8 用户登陆拦截器"></a>3.3.8 用户登陆拦截器</h5><p>FromLoginFilter.java/LoginIntercepter.java   检查是否登陆,只有登陆才能操作；</p>
+<h2 id="五、关键代码"><a href="#五、关键代码" class="headerlink" title="五、关键代码"></a>五、关键代码</h2><hr>
+<table>
+<thead>
+<tr>
+<th><strong>1) 设计数据库:</strong>  <strong>yike</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CREATE TABLE user(  user_id  VARCHAR(30),                                                                                         password VARCHAR(50),  salt     VARCHAR(100),  role_ids VARCHAR(100),  locked   BOOL DEFAULT FALSE,  PRIMARY KEY (user_id))表：class, course, department,  resource, role, section, speciality, staff, student, takes, timetable, user;</td>
+</tr>
+<tr>
+<td>### <strong>2) 建立web项目、引入jar文件、准备环境</strong>【struts相关jar】commons-fileupload-1.2.2.jarcommons-io-2.0.1.jarcommons-lang3-3.1.jarfreemarker-2.3.19.jarjavassist-3.11.0.GA.jarognl-3.0.5.jarstruts2-core-2.3.4.1.jarxwork-core-2.3.4.1.jar 【hibernate 相关 jar】antlr-2.7.6.jarcommons-collections-3.1.jardom4j-1.6.1.jarhibernate3.jarhibernate-jpa-2.0-api-1.0.0.Final.jarjavassist-3.12.0.GA.jarjta-1.1.jarslf4j-api-1.6.1.jar 【Spring-core】commons-logging-1.1.3.jarspring-beans-3.2.5.RELEASE.jarspring-context-3.2.5.RELEASE.jarspring-core-3.2.5.RELEASE.jarspring-expression-3.2.5.RELEASE.jar 【Spring-web】spring-web-3.2.5.RELEASE.jarstruts2-spring-plugin-2.3.4.1.jar 【Spring-Aop】aopalliance.jaraspectjrt.jaraspectjweaver.jarspring-aop-3.2.5.RELEASE.jar 【Spring-orm】c3p0-0.9.1.2.jarmysql-connector-java-5.1.12-bin.jarspring-orm-3.2.5.RELEASE.jarspring-tx-3.2.5.RELEASE.jarspring-jdbc-3.2.5.RELEASE.jar</td>
+</tr>
+<tr>
+<td><strong>3) 设计javvabean、写映射</strong></td>
+</tr>
+<tr>
+<td><strong>public class User {</strong>    <strong>String username; //用户名</strong>    <strong>String userId;</strong>    <strong>String password;</strong>    <strong>String salt;</strong>    <strong>private List<long> roleIds; //拥有的角色列表</long></strong>    <strong>private Boolean locked = Boolean.FALSE;</strong></td>
+</tr>
+<tr>
+<td><?xml version=*"1.0"* encoding=*"UTF-8"* ?><!DOCTYPE hibernate-mapping PUBLIC     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> &lt;hibernate-mapping package=*”cn.<strong>giit</strong>.entity”<em>&gt;     &lt;class name=</em>“<strong>admin</strong>“* table=*”<strong>user</strong>“<em>&gt;        &lt;id name=</em>“id”<em>&gt;            &lt;generator class=</em>“native”<em>&gt;                &lt;property name=</em>“adminName”* length=*”20”<em>&gt;        &lt;property name=</em>“pwd”* length=*”20”*&gt;     </td>
+</tr>
+<tr>
+<td><strong>public</strong> <strong>class</strong> Dept {     <strong>private</strong> <strong>int</strong> id;    <strong>private</strong> String name;}</td>
+</tr>
+<tr>
+<td>&lt;hibernate-mapping package=*”cn.itcast.entity”<em>&gt;     &lt;class name=</em>“Dept”* table=*”dept”<em>&gt;        &lt;id name=</em>“id”* column=*”deptId”<em>&gt;            &lt;generator class=</em>“native”<em>&gt;                &lt;property name=</em>“name”* column=*”deptName”*&gt;     </td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><strong>public class Student {</strong>    <strong>String studentId;</strong>    <strong>String password;</strong>    <strong>String studentName;</strong>    <strong>String idCard;</strong>    <strong>String year;</strong>    <strong>String className;</strong>    <strong>String telephoneNumber;</strong>    <strong>String studentOriginBase;</strong>    <strong>String gender;</strong>    <strong>String picPath;</strong>    <strong>}</strong></td>
+</tr>
+<tr>
+<td>&lt;hibernate-mapping package=*”cn.<strong>giit</strong>.entity”<em>&gt;     &lt;class name=</em>“<strong>student</strong>“* table=*”<strong>student</strong>“<em>&gt;        &lt;id name=</em>“id”* column=*”empId”<em>&gt;            &lt;generator class=</em>“native”<em>&gt;                &lt;property name=</em>“empName”<em>&gt;        &lt;property name=</em>“salary”<em>&gt;        <!-- 多对一 -->        &lt;many-to-one name=</em>“dept”* column=*”dept_id”* class=*”Dept”*&gt;     </td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><strong>4) Dao设计接口</strong></td>
+</tr>
+<tr>
+<td><strong>public</strong> <strong>interface</strong> IAdminDao {     /**     * 保存     * <strong>@param</strong> admin  管理员对象     <em>/    *</em>void** save(Admin admin);     /**     * 根据管理员信息查询     * <strong>@param</strong> admin  管理员对象     * <strong>@return</strong>    返回查询后的结果     */    Admin findByAdmin(Admin admin); }</td>
+</tr>
+<tr>
+<td><strong>public</strong> <strong>interface</strong> IDeptDao {     /**     * 查询全部     * <strong>@return</strong> 返回全部信息     <em>/    List<dept> getAll();     /*</dept></em>     * 根据主键查询     * <strong>@param</strong> id  主键     * <strong>@return</strong> 返回查询后的结果     <em>/    Dept findById(*</em>int** id); }</td>
+</tr>
+<tr>
+<td>public interface StudentDao {    public List<student> findAll();     public void add(Student student);     public void update(Student student);     public void delete(int studentId);}     public void delete(int studentId);      List<employee> getAll(String employeeName); }</employee></student></td>
+</tr>
+<tr>
+<td>Dao实现、service省略</td>
+</tr>
+<tr>
+<td>…..</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="六、实验结果截图（主要界面）"><a href="#六、实验结果截图（主要界面）" class="headerlink" title="六、实验结果截图（主要界面）"></a>六、实验结果截图（主要界面）</h2><hr>
+<ul>
+<li>登录界面</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/07/V0Mf7q.jpg" alt="登录界面"> </p>
+<ul>
+<li>控制面板</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkrff.md.jpg" alt="控制面板"> </p>
+<ul>
+<li>用户管理</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/04/VNkHcF.md.jpg" alt="用户管理"> </p>
+<ul>
+<li>角色管理</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/06/07/V0GY1f.jpg" alt="img"> </p>
+<ul>
+<li><p>学院管理</p>
+<p><img src="https://s2.ax1x.com/2019/06/07/V0GJ9P.md.jpg" alt="学院管理"></p>
+</li>
+</ul>
+<h2 id="七、报告总结体会"><a href="#七、报告总结体会" class="headerlink" title="七、报告总结体会"></a>七、报告总结体会</h2><hr>
+<p>通过这次课程设计，我感受到了开发一个系统的不易，它要运用许多的知识，包括自己没学过的知识，所以要有自学的本领，这个项目所用到的spring框架在课堂上，老师就没介绍过，需要自己查资料，对需求的分析，进行数据库的建模，然后进行代码的设计和实现，完成一个小工程需要做一些建模，这个必须要有，他们可以让你的思路清晰，对你的项目的完成有很大的帮助，平时的一些小知识点也需要灵活应用，很多时候阻拦你的可能就是一个小问题。</p>
+<h2 id="八、参考文献"><a href="#八、参考文献" class="headerlink" title="八、参考文献"></a>八、参考文献</h2><hr>
+<p>[1] 袁梅宇 张智斌 何佳．求精要诀：Java EE编程开发案例精讲．北京：清华大学出版社，2015.</p>
+<p>[2] Oracle．Java EE Tutorial. <a href="http://docs.oracle.com/javaee/5/tutorial/doc/，2010" target="_blank" rel="noopener">http://docs.oracle.com/javaee/5/tutorial/doc/，2010</a>.</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='a277b937be540aba926b'
+        data-cs='9eb54bfed5d880c0db144ffd2bf963233ad8e294'
+        data-r='gitalk'
+        data-o='yutayouguan'
+        data-a='yutayouguan'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、课程报告简介"><span class="toc-number">1.</span> <span class="toc-text">一、课程报告简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、课程报告目的"><span class="toc-number">2.</span> <span class="toc-text">二、课程报告目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、编程环境"><span class="toc-number">3.</span> <span class="toc-text">三、编程环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、报告内容"><span class="toc-number">4.</span> <span class="toc-text">四、报告内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-简介"><span class="toc-number">4.1.</span> <span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-需求分析"><span class="toc-number">4.2.</span> <span class="toc-text">2. 需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-系统概述："><span class="toc-number">4.2.1.</span> <span class="toc-text">2.1 系统概述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2功能分类"><span class="toc-number">4.2.2.</span> <span class="toc-text">2.2功能分类:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-设计"><span class="toc-number">4.3.</span> <span class="toc-text">3.设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-系统设计"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.1 系统设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-数据库的设计"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.2 数据库的设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-代码"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.3  代码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-1-设计数据库：yike"><span class="toc-number">4.3.3.1.</span> <span class="toc-text">3.3.1 设计数据库：yike</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-2-建立web项目、引入jar文件、准备环境"><span class="toc-number">4.3.3.2.</span> <span class="toc-text">3.3.2 建立web项目、引入jar文件、准备环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-3-设计javabean、写映射"><span class="toc-number">4.3.3.3.</span> <span class="toc-text">3.3.3 设计javabean、写映射</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-4-Dao设计接口"><span class="toc-number">4.3.3.4.</span> <span class="toc-text">3.3.4  Dao设计接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-5-Service接口实现"><span class="toc-number">4.3.3.5.</span> <span class="toc-text">3.3.5  Service接口实现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-6-Action实现"><span class="toc-number">4.3.3.6.</span> <span class="toc-text">3.3.6  Action实现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-7-JSP页面"><span class="toc-number">4.3.3.7.</span> <span class="toc-text">3.3.7 JSP页面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-8-用户登陆拦截器"><span class="toc-number">4.3.3.8.</span> <span class="toc-text">3.3.8 用户登陆拦截器</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、关键代码"><span class="toc-number">5.</span> <span class="toc-text">五、关键代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、实验结果截图（主要界面）"><span class="toc-number">6.</span> <span class="toc-text">六、实验结果截图（主要界面）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、报告总结体会"><span class="toc-number">7.</span> <span class="toc-text">七、报告总结体会</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、参考文献"><span class="toc-number">8.</span> <span class="toc-text">八、参考文献</span></a></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
